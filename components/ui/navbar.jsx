@@ -22,7 +22,7 @@ const Navbar = () => {
     ]
     
     return (
-    <nav className="bg-[#242960] min-h-16 px-5 py-2 flex justify-between items-center">
+    <nav className="bg-[#cccccc] min-h-16 px-5 py-2 flex justify-between items-center">
         <Image
             src="/logo.png"
             width={100}
@@ -31,7 +31,7 @@ const Navbar = () => {
             className="w-auto h-auto"
         />
         <div className="hidden md:block">
-            <ul className="text-white flex flex-row-reverse">
+            <ul className="flex flex-row-reverse">
                 <li onClick={()=>logOut()} className="cursor-pointer">
                     登出
                 </li>

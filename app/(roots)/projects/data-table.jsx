@@ -64,9 +64,6 @@ export function DataTable({ columns, data}) {
         className="w-full md:max-w-sm"
       />
       <div className=" mb-3 md:mb-0 flex justify-end md:justify-normal w-full md:w-auto">
-        <Button variant="outline">
-          建立新專案
-        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="secondary" className="ml-2">

@@ -137,7 +137,6 @@ export const columns = [
                     海報編輯
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem>海報下載</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           )

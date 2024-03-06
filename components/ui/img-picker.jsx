@@ -32,14 +32,14 @@ const ImgPicker = ({open, setOpen, bgc, setBgc}) => {
             </div>
             <div className=" mt-2">
                 <div>
-                    <h3 className=" font-medium leading-none">風格篩選</h3>
+                    <h3 className=" font-medium leading-none">背景圖片設定</h3>
                 </div>
                 <Separator className="my-3" />
-                <div className="flex items-center space-x-2">
+                {/* <div className="flex items-center space-x-2">
                     <Badge variant="outline">玄幻</Badge>
                     <Badge variant="outline">奢侈</Badge>
                     <Badge variant="outline">可愛</Badge>
-                </div>
+                </div> */}
             </div>
             <div className="grid grid-cols-4 h-[200px] w-full">
                 {[...Array(bgcCount)].map((_, index) => (

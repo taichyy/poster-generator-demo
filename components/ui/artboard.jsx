@@ -37,7 +37,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
     const [width, setWidth] = useState(wpx)
     
     // Change default artboard here (0, 1, 2, 3)
-    const [artboard, setArtboard] = useState(2)
+    const [artboard, setArtboard] = useState(0)
     
     const handleScaleChange = (e) => {
         const newScale = parseFloat(e.target.value);
@@ -216,7 +216,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
             content : "獎品以實際現貨為主，\n如有疑問請先詢問再購買"
         }]
         
-        console.log(JSON.stringify(addAttributes(items)))
+        // console.log(JSON.stringify(addAttributes(items)))
     
         return items
     }
@@ -232,7 +232,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                 left : "0px",
             },
             link: "/posterAssets/images/backgrounds/"+data.bgc+".png",
-            alt: "NX樂園背景圖片"
+            alt: "背景圖片"
         }]
         items = [...items, {
             type: "img",
@@ -243,7 +243,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                 left : "5px",
             },
             link: "/logo.png",
-            alt: "NX樂園Logo"
+            alt: "Logo"
         }]
         
         // Amount and price + promotion
@@ -406,10 +406,6 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         }));
     }
     
-    console.log(artboardItems[artboard])
-    // console.log(JSON.stringify(addAttributes(artBoardA())))
-
-    
     // Hydration error protection
     useEffect(()=>{
         setMounted(true)
@@ -454,7 +450,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                 {/* Artboard switcher */}
                 <div className=" flex space-x-3 flex-1 justify-center">
                     <ArrowLeftCircle className=" cursor-pointer" onClick={()=>setArtboard(artboard == 0 ? 0 : artboard-1)} />
-                    <ArrowRightCircle className=" cursor-pointer" onClick={()=>setArtboard(artboard == 3 ? 3 : artboard+1)} />
+                    <ArrowRightCircle className=" cursor-pointer" onClick={()=>setArtboard(artboard == 2 ? 2 : artboard+1)} />
                 </div>
                 {/* Full screen / window control */}
                 <div className="flex-1 flex justify-end">
@@ -469,7 +465,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
             <div className=" flex flex-1">
                 <div className=" pl-3 pr-3 pt-4 bg-[#535353] space-y-2 flex flex-col">
                     {/* Aside control bar */}
-                    <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtboardItems={setArtboardItems} />
+                    {/* <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtboardItems={setArtboardItems} /> */}
                     <ObjAdjuster 
                         data={data} 
                         artboard={artboard} 
