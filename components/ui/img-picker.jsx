@@ -46,7 +46,7 @@ const ImgPicker = ({open, setOpen, bgc, setBgc}) => {
                     <div key={index} className="relative m-2 aspect-video" onClick={()=>setBgc(index+1)}>
                         <Image
                             src={`/posterAssets/images/backgrounds/${index+1}.png`}
-                            alt={`NX樂園背景圖片${index+1}`}
+                            alt={`背景圖片${index+1}`}
                             fill
                             style={{objectFit: "cover"}}
                         />

@@ -37,7 +37,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
     const [width, setWidth] = useState(wpx)
     
     // Change default artboard here (0, 1, 2, 3)
-    const [artboard, setArtboard] = useState(0)
+    const [artboard, setArtoard] = useState(0)
     
     const handleScaleChange = (e) => {
         const newScale = parseFloat(e.target.value);
@@ -46,10 +46,6 @@ const Artboard = ({wpx, hpx, data, scale}) => {
     
     // Select which template to use
     const template = templateSelector(data)
-    
-
-    
-
     
     const artBoardA = () => {
         // Background and title
@@ -352,7 +348,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         return items
     }
     
-    const [artboardItems, setArtboardItems] = useState([
+    const [artboardItems, setArtoardItems] = useState([
         addAttributes(artBoardA()), 
         addAttributes(artBoardB()), 
         addAttributes(artBoardC()), 
@@ -400,7 +396,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         });
         
         // Update artboardItems
-        setArtboardItems(prevItems => ({
+        setArtoardItems(prevItems => ({
             ...prevItems,
             [artboard]: updatedArtboardItems,
         }));
@@ -449,8 +445,8 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                 </div>
                 {/* Artboard switcher */}
                 <div className=" flex space-x-3 flex-1 justify-center">
-                    <ArrowLeftCircle className=" cursor-pointer" onClick={()=>setArtboard(artboard == 0 ? 0 : artboard-1)} />
-                    <ArrowRightCircle className=" cursor-pointer" onClick={()=>setArtboard(artboard == 2 ? 2 : artboard+1)} />
+                    <ArrowLeftCircle className=" cursor-pointer" onClick={()=>setArtoard(artboard == 0 ? 0 : artboard-1)} />
+                    <ArrowRightCircle className=" cursor-pointer" onClick={()=>setArtoard(artboard == 2 ? 2 : artboard+1)} />
                 </div>
                 {/* Full screen / window control */}
                 <div className="flex-1 flex justify-end">
@@ -461,16 +457,16 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                     )}
                 </div>
             </div>
-            {/* Main artboad */}
+            {/* Main art board */}
             <div className=" flex flex-1">
                 <div className=" pl-3 pr-3 pt-4 bg-[#535353] space-y-2 flex flex-col">
                     {/* Aside control bar */}
-                    {/* <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtboardItems={setArtboardItems} /> */}
+                    {/* <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtoardItems={setArtoardItems} /> */}
                     <ObjAdjuster 
                         data={data} 
                         artboard={artboard} 
                         artboardItems={artboardItems} 
-                        setArtboardItems={setArtboardItems} 
+                        setArtoardItems={setArtoardItems} 
                         width={width} setWidth={setWidth}
                         height={height} setHeight={setHeight}
                     />
