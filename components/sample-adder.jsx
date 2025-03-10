@@ -1,9 +1,15 @@
 "use client"
-import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
+import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge"
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 import {
     AlertDialog,
     AlertDialogAction,
@@ -15,13 +21,7 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
+import { Badge } from "@/components/ui/badge"
 import { addAttributes } from "@/lib/functions";
   
 
@@ -135,105 +135,105 @@ const SampleAdder = ({artboard, data, artboardItems, setArtboardItems}) => {
     }
     
     return (
-    <AlertDialog>
-        <AlertDialogTrigger>
-            <PlusCircle className="cursor-pointer" />
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-            <AlertDialogHeader>
-                <AlertDialogTitle className="flex justify-between items-center">
-                    新增獎項示意圖
-                    <AlertDialogCancel className="border-none hover:bg-inherit hover:text-red-900">
-                        <X />
-                    </AlertDialogCancel>
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                    請手動選擇對應獎項等級的圖片並新增。
-                </AlertDialogDescription>
-            </AlertDialogHeader>
-            <div>
+        <AlertDialog>
+            <AlertDialogTrigger>
+                <PlusCircle className="cursor-pointer" />
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+                <AlertDialogHeader>
+                    <AlertDialogTitle className="flex justify-between items-center">
+                        新增獎項示意圖
+                        <AlertDialogCancel className="border-none hover:bg-inherit hover:text-red-900">
+                            <X />
+                        </AlertDialogCancel>
+                    </AlertDialogTitle>
+                    <AlertDialogDescription>
+                        請手動選擇對應獎項等級的圖片並新增。
+                    </AlertDialogDescription>
+                </AlertDialogHeader>
                 <div>
-                    {prizes.map( (level, index) => (
-                        <Badge 
-                            variant="outline" 
-                            className="cursor-pointer mr-2" 
-                            key={index}
-                            onClick={()=>setSelect(level)}
-                            style={
-                                select == level ? {
-                                    background : "#000",
-                                    color : "#FFF"
-                                } : {
-                                    background : "#FFF"
+                    <div>
+                        {prizes.map( (level, index) => (
+                            <Badge 
+                                variant="outline" 
+                                className="cursor-pointer mr-2" 
+                                key={index}
+                                onClick={()=>setSelect(level)}
+                                style={
+                                    select == level ? {
+                                        background : "#000",
+                                        color : "#FFF"
+                                    } : {
+                                        background : "#FFF"
+                                    }
                                 }
-                            }
-                        >
-                            {level}
-                        </Badge>
-                    ))}
+                            >
+                                {level}
+                            </Badge>
+                        ))}
+                    </div>
+                    <div className=" w-[80%] mx-auto">
+                        <Carousel className="py-4">
+                            <CarouselContent>
+                                {sampleImages.map( (img) => (
+                                    <CarouselItem key={img} className=" group aspect-video flex items-center basis-1/2 relative">
+                                        <Image
+                                            src={sampleImagesRoute+img}
+                                            alt={`獎項示意圖 - ${img}`}
+                                            width={200}
+                                            height={150}
+                                            className=" w-full h-auto"
+                                            onClick={()=>setImgSelect(img)}
+                                        />
+                                        {/* Selected tick */}
+                                        <div 
+                                            className="absolute pointer-events-none w-full h-full top-0 left-0 flex items-center justify-center duration-150"
+                                            style={ imgSelect == img ? {
+                                                opacity : "100"
+                                            }: {
+                                                opacity : "0"
+                                            }}
+                                        >
+                                            <div className="absolute bg-white group-hover:opacity-30 duration-150 opacity-80 w-full h-full top-0 left-0" />
+                                            <Check size={100} className=" group-hover:opacity-30 duration-150 z-10 text-red-800"/>
+                                        </div>
+                                        {/* Zoom-in btn */}
+                                        <div className="group cursor-pointer absolute bottom-0 right-0 bg-white">
+                                            <ZoomIn className="group-hover:text-red-800 duration-150" onClick={()=>setFullView(sampleImagesRoute+img)} />
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext />
+                        </Carousel>
+                    </div>
                 </div>
-                <div className=" w-[80%] mx-auto">
-                    <Carousel className="py-4">
-                        <CarouselContent>
-                            {sampleImages.map( (img) => (
-                                <CarouselItem key={img} className=" group aspect-video flex items-center basis-1/2 relative">
-                                    <Image
-                                        src={sampleImagesRoute+img}
-                                        alt={`獎項示意圖 - ${img}`}
-                                        width={200}
-                                        height={150}
-                                        className=" w-full h-auto"
-                                        onClick={()=>setImgSelect(img)}
-                                    />
-                                    {/* Selected tick */}
-                                    <div 
-                                        className="absolute pointer-events-none w-full h-full top-0 left-0 flex items-center justify-center duration-150"
-                                        style={ imgSelect == img ? {
-                                            opacity : "100"
-                                        }: {
-                                            opacity : "0"
-                                        }}
-                                    >
-                                        <div className="absolute bg-white group-hover:opacity-30 duration-150 opacity-80 w-full h-full top-0 left-0" />
-                                        <Check size={100} className=" group-hover:opacity-30 duration-150 z-10 text-red-800"/>
-                                    </div>
-                                    {/* Zoom-in btn */}
-                                    <div className="group cursor-pointer absolute bottom-0 right-0 bg-white">
-                                        <ZoomIn className="group-hover:text-red-800 duration-150" onClick={()=>setFullView(sampleImagesRoute+img)} />
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                    </Carousel>
-                </div>
-            </div>
-            { fullView ? (
-                <div className="absolute top-0 left-0 w-full h-full bg-white z-50">
-                    <XCircle className="ml-auto mt-2 mr-2 cursor-pointer" onClick={()=>setFullView("")} />
-                    <Image
-                        src={fullView}
-                        width={500}
-                        height={300}
-                        alt="全螢幕預覽之示意圖片"
-                        className=" w-[80%] mx-auto h-auto"
-                    />
-                </div>
-            ) : (
-                <></>
-            )}
-            <AlertDialogFooter>
-                <AlertDialogCancel>取消</AlertDialogCancel>
-                <AlertDialogAction
-                    disabled={!select || !imgSelect} 
-                    onClick={()=>addItem()}
-                >
-                    新增
-                </AlertDialogAction>
-            </AlertDialogFooter>
-        </AlertDialogContent>
-    </AlertDialog>
+                { fullView ? (
+                    <div className="absolute top-0 left-0 w-full h-full bg-white z-50">
+                        <XCircle className="ml-auto mt-2 mr-2 cursor-pointer" onClick={()=>setFullView("")} />
+                        <Image
+                            src={fullView}
+                            width={500}
+                            height={300}
+                            alt="全螢幕預覽之示意圖片"
+                            className=" w-[80%] mx-auto h-auto"
+                        />
+                    </div>
+                ) : (
+                    <></>
+                )}
+                <AlertDialogFooter>
+                    <AlertDialogCancel>取消</AlertDialogCancel>
+                    <AlertDialogAction
+                        disabled={!select || !imgSelect} 
+                        onClick={()=>addItem()}
+                    >
+                        新增
+                    </AlertDialogAction>
+                </AlertDialogFooter>
+            </AlertDialogContent>
+        </AlertDialog>
     );
 }
  
