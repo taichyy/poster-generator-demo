@@ -1,21 +1,68 @@
+"use client"
+import Image from "next/image";
+import { Circle } from "fabric";
+import { useEffect, useState } from "react";
+
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion"
-  
+} from "@/components/ui/accordion";
+import { FabricCanvas } from "@/components/fabric-canvas";
+
 const NewProjectPage = () => {
+    const [addElements, setAddElements] = useState([]);
+    const [background, setBackground] = useState(null);
+
+    // https://ithelp.ithome.com.tw/users/20168354/ironman/7134
+
+    useEffect(() => {
+        // Create a circle
+        const newElements = new Circle({
+            left: 100, // X position
+            top: 100, // Y position
+            radius: 50, // Circle radius
+            fill: "blue", // Fill color
+            stroke: "black", // Border color
+            strokeWidth: 2 // Border width
+        });
+
+        setAddElements([...addElements, newElements]);
+    }, [])
+
     return (
-        <main>
+        <main className="flex w-full gap-3">
             <Accordion type="single" collapsible defaultValue="item-1">
                 <AccordionItem value="item-1">
-                    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                    <AccordionTrigger>基本商品設定</AccordionTrigger>
                     <AccordionContent>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        <div className="flex items-center space-x-2">
+                            {Array.from({ length: 4 }).map((_, index) => {
+                                const src = `/assets/demo-backgrounds/${index + 1}.jpg`
+
+                                return (
+                                    <Image
+                                        key={index}
+                                        src={src}
+                                        alt="Backgrounds provided by freepik.com."
+                                        width={100}
+                                        height={100}
+                                        className="aspect-square object-cover"
+                                        onClick={() => setBackground(src)}
+                                    />
+                                )
+                            })}
+                        </div>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
+            <div className="min-h-screen flex-1 p-2">
+                <FabricCanvas 
+                    addElements={addElements} 
+                    background={background}
+                />
+            </div>
         </main>
     );
 }
