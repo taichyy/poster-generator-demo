@@ -1,48 +1,57 @@
 "use client";
 import * as fabric from "fabric";
-import { useEffect, useRef } from "react";
+import { Square } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const FabricCanvas = ({ addElements, background }) => {
     const canvasRef = useRef(null);
-    const fabricCanvasRef = useRef(null);
+    const [canvas, setCanvas] = useState(null);
 
     useEffect(() => {
-        // Initialize Fabric.js canvas
-        fabricCanvasRef.current = new fabric.Canvas(canvasRef.current, {
-            selection: true,
-        });
+        if (canvasRef.current) {
+            const initCanvas = new fabric.Canvas(canvasRef.current, {
+                width: 500,
+                height: 500,
+            })
 
-        return () => {
-            fabricCanvasRef.current.dispose();
-        };
-    }, []);
+            initCanvas.backgroundColor = "#ccc";
+            initCanvas.renderAll();
 
-    useEffect(() => {
-        if (fabricCanvasRef.current) {
-            // Set background image if available
-            if (background) {
-                fabric.FabricImage.fromURL(background, (img) => {
-                    fabricCanvasRef.current.setBackgroundImage(img, 
-                        fabricCanvasRef.current.renderAll.bind(fabricCanvasRef.current));
-                });
-            } else {
-                // Reset background if no image is set
-                fabricCanvasRef.current.backgroundColor = "#f0f0f0";
-                fabricCanvasRef.current.renderAll();
+            setCanvas(initCanvas);
+
+            return () => {
+                initCanvas.dispose();
             }
         }
-    }, [background]);
-
-    useEffect(() => {
-        if (fabricCanvasRef.current && addElements.length > 0) {
-            // Add elements only if they are not already on the canvas
-            addElements.forEach((element) => {
-                fabricCanvasRef.current.add(element);
+    }, [])
+    
+    const addRectangle = () => {
+        if (canvas) {
+            const rect = new fabric.Rect({
+                left: 100,
+                top: 100,
+                fill: "red",
+                width: 100,
+                height: 100,
             });
+            
+            canvas.add(rect);
         }
-    }, [addElements]);
+    }
 
-    return <canvas ref={canvasRef} height={300} className="w-full h-full border" />;
+    return (
+        <div>
+            <ul>
+                <li>
+                    <Square onClick={addRectangle} />
+                </li>
+            </ul>
+            <canvas
+                id="canvas"
+                ref={canvasRef}
+            />
+        </div>
+    );
 };
 
-export { FabricCanvas };
+export default FabricCanvas;

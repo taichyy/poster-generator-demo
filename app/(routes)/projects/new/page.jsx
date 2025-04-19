@@ -9,7 +9,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FabricCanvas } from "@/components/fabric-canvas";
+import FabricCanvas from "@/components/fabric-canvas";
 
 const NewProjectPage = () => {
     const [addElements, setAddElements] = useState([]);
@@ -32,7 +32,7 @@ const NewProjectPage = () => {
     }, [])
 
     return (
-        <main className="flex w-full gap-3">
+        <main className="flex gap-3 w-full">
             <Accordion type="single" collapsible defaultValue="item-1">
                 <AccordionItem value="item-1">
                     <AccordionTrigger>基本商品設定</AccordionTrigger>
@@ -48,7 +48,7 @@ const NewProjectPage = () => {
                                         alt="Backgrounds provided by freepik.com."
                                         width={100}
                                         height={100}
-                                        className="aspect-square object-cover"
+                                        className="object-cover aspect-square"
                                         onClick={() => setBackground(src)}
                                     />
                                 )
@@ -57,7 +57,7 @@ const NewProjectPage = () => {
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>
-            <div className="min-h-screen flex-1 p-2">
+            <div className="flex-1 p-2 min-h-screen">
                 <FabricCanvas 
                     addElements={addElements} 
                     background={background}
