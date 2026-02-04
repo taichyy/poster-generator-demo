@@ -10,6 +10,13 @@ const NavDesk = ({
 }) => {
     const pathname = usePathname()
 
+    const navData = {
+        nav_logo_src: "/logo.jpg",
+        nav_logo_alt: "Shop logo.",
+        nav_logo_bg: "海報",
+        nav_logo_small: "生成",
+    }
+
     useEffect(() => {
         setShowNav(false)
     }, [pathname])
@@ -20,13 +27,13 @@ const NavDesk = ({
                 {/* LOGO */}
                 <Link href="/" className="flex items-center ">
                     {/* <Image
-                        src="/logo.jpg"
-                        alt="Shop logo."
+                        src={navData.nav_logo_src}
+                        alt={navData.nav_logo_alt}
                         width={80}
                         height={80}
                     /> */}
                     <h1 className="text-xl md:text-2xl font-bold">
-                        <span className="text-3xl md:text-4xl text-pink-700">海報</span>生成
+                        <span className="text-3xl md:text-4xl text-pink-700">{navData.nav_logo_bg}</span>{navData.nav_logo_small}
                     </h1>
                 </Link>
                 {/* NavLinks */}
@@ -40,12 +47,13 @@ const NavDesk = ({
                     ))}
                 </div>
                 {/* Buttons */}
-                <div>
-                    <button className="hidden md:block md:px-8 md:py-2.5 px-6 py-2 text-white font-semibold text-base bg-blue-700 hover:bg-blue-900 transition-all duration-200 rounded-full">
+                {/* For showing the Join Now btn, move md:hidden to Burger Menu as well. */}
+                <div className=" md:hidden">
+                    {/* <button className="hidden md:block md:px-8 md:py-2.5 px-6 py-2 text-white font-semibold text-base bg-blue-700 hover:bg-blue-900 transition-all duration-200 rounded-full">
                         Join Now
-                    </button>
+                    </button> */}
                     {/* Burger menu */}
-                    <HiBars3BottomRight onClick={() => setShowNav(true)} className="w-8 h-8 cursor-pointer text-black md:hidden" />
+                    <HiBars3BottomRight onClick={() => setShowNav(true)} className="w-8 h-8 cursor-pointer text-black" />
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@ const ProjectsPage = async ({
                 <div className="flex gap-2">
                     <Avatar>
                         <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback>TAI</AvatarFallback>
                     </Avatar>
                     <div className="flex items-center ml-2 md:ml-0">
                         <h2 className="font-semibold text-slate-800 text-xl">
@@ -52,7 +52,7 @@ const ProjectsPage = async ({
                     <Tooltip>
                         <TooltipTrigger asChild className="cursor-pointer">
                             <DialogTrigger asChild>
-                                <PlusCircle />
+                                {/* <PlusCircle /> */}
                             </DialogTrigger>
                         </TooltipTrigger>
                         <TooltipContent>

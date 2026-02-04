@@ -24,7 +24,7 @@ const ProjectEditPage = () => {
     const [bgc, setBgc] = useState(data.bgc)
 
     return (
-        <div className="h-full px-2 py-6">
+        <div className="h-full px-2 py-6 flex-1">
             <ResizablePanelGroup direction="horizontal">
                 <ResizablePanel defaultSize={20} className="hidden md:flex min-w-[200px] max-w-[20%] pt-2 justify-center">
                     <div>

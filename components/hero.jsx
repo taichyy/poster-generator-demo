@@ -9,13 +9,13 @@ const Hero = () => {
     }
 
     return (
-        <div className="flex-1 bg-[#f7f6fb]">
+        <div className="flex-1 bg-[#f7f6fb] min-h-[50vh]">
             <div className="flex justify-center flex-col w-[90%] sm:w-[80%] h-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
                     {/* Text Content */}
                     <div>
                         {/* Top box */}
-                        {heroData.hero_label && (
+                        {/* {heroData.hero_label && (
                             <div className="w-fit py-1.5 px-2 md:px-5 rounded-full shadow-md flex items-center space-x-3 bg-white">
                                 <div className="px-3 py-1 md:px-5 md:py-1 rounded-full bg-blue-700 hover:bg-blue-800 md:text-base sm:text-sm text-xs text-white transition-all duration-150">
                                     New
@@ -24,7 +24,7 @@ const Hero = () => {
                                     {heroData.hero_label}
                                 </p>
                             </div>
-                        )}
+                        )} */}
                         {/* Heading */}
                         {heroData?.hero_title && (
                             <h1 data-aos="fade-up" className=" text-2xl sm:text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3.5rem] lg:leading-[3.8rem]">

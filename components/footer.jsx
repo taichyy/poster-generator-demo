@@ -3,51 +3,56 @@ import React, { Fragment } from 'react'
 import { FaClock, FaDribbble, FaEnvelope, FaFacebook, FaMapMarkedAlt, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => {
+    const footerData = {
+        footer_logo_bg: "海報",
+        footer_logo_small: "生成",
+    }
     const footerContent = [
+        // {
+        //     title: "About Us",
+        //     list: ["Support center", "Customer Support", "About Us", "CopyRight", "Popular Campaign"],
+        // },
+        // {
+        //     title: "Information",
+        //     list: ["Return Policy", "Privacy Policy", "Terms & Conditions", "Site Map", "Store Hours"],
+        // },
         {
-            title: "About Us",
-            list: ["Support center", "Customer Support", "About Us", "CopyRight", "Popular Campaign"],
-        },
-        {
-            title: "Information",
-            list: ["Return Policy", "Privacy Policy", "Terms & Conditions", "Site Map", "Store Hours"],
-        },
-        {
-            title: "Contact Info",
+            title: "聯絡我們",
             list: [
                 {
                     icon: <FaMapMarkedAlt />,
-                    text: "Amsterdam, Netherlands",
+                    text: "Taipei, Taiwan",
                 },
                 {
                     icon: <FaPhoneAlt />,
-                    text: "+01 23454 65456",
+                    text: "+886 912 232 234",
                 },
                 {
                     icon: <FaClock />,
-                    text: "7 Days - 8am - 10am",
+                    text: "每日 - 8am - 10am",
                 },
                 {
                     icon: <FaEnvelope />,
-                    text: "info.example@gmail.com",
+                    text: "taichedev@gmail.com",
                 },
             ],
         },
     ]
     
     return (
-        <div className="bg-white py-10 ">
+        <div className="bg-white md:py-10">
             <div className="w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:flex md:justify-between gap-8">
+                {/* <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"> */}
                     {/* Logo and description */}
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold">
-                            <span className="text-3xl md:text-4xl text-pink-700">A</span>ppify
+                            <span className="text-3xl md:text-4xl text-pink-700">{footerData.footer_logo_bg}</span>{footerData.footer_logo_small}
                         </h1>
-                        <p className="mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600">
+                        {/* <p className="mt-4 text-sm font-medium leading-[2rem] w-[80%] text-gray-600">
                             This is just some sample text, please generate your own text.
                             Come on give me more, code pilot.
-                        </p>
+                        </p> */}
                     </div>
                     {/* About and links */}
                     {footerContent.map((content, index) => (
@@ -78,7 +83,7 @@ const Footer = () => {
                         Copyright &copy; 2024 Taichee, co., Ltd. All Rights Reserved.
                     </p>
                     <div className="flex items-center space-x-4 mt-4 md:mt-0">
-                        <span>Social: </span>
+                        {/* <span>Social: </span>
                         <Link href="#" className="text-gray-500 hover:text-gray-800">
                             <FaFacebook />
                         </Link>
@@ -87,7 +92,7 @@ const Footer = () => {
                         </Link>
                         <Link href="#" className="text-gray-500 hover:text-gray-800">
                             <FaDribbble />
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>

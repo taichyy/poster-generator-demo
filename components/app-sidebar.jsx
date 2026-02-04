@@ -1,4 +1,4 @@
-import { ChevronUp, Headphones, Home, Inbox, Settings, User2 } from "lucide-react"
+import { ArrowLeft, ChevronUp, Headphones, Home, Inbox, Settings, User2 } from "lucide-react"
 
 import {
     Sidebar,
@@ -12,6 +12,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
+import Link from "next/link"
 
 // Menu items.
 const items = [
@@ -23,34 +24,47 @@ const items = [
                 url: "/projects",
                 icon: Home,
             },
-            {
-                title: "系統設定",
-                url: "#",
-                icon: Settings,
-            },
+            // {
+            //     title: "系統設定",
+            //     url: "#",
+            //     icon: Settings,
+            // },
         ]
     },
-    {
-        title: "其他",
-        links: [
-            {
-                title: "最新消息",
-                url: "#",
-                icon: Inbox,
-            },
-            {
-                title: "聯絡我們",
-                url: "#",
-                icon: Headphones,
-            },
-        ]
-    }
+    // {
+    //     title: "其他",
+    //     links: [
+    //         {
+    //             title: "最新消息",
+    //             url: "#",
+    //             icon: Inbox,
+    //         },
+    //         {
+    //             title: "聯絡我們",
+    //             url: "#",
+    //             icon: Headphones,
+    //         },
+    //     ]
+    // }
 ]
 
 export async function AppSidebar() {
+    const homeText = "回首頁";
+    const sideBarData = {
+        sidebar_user_name: "使用者名稱",
+        sidebar_dropdown_items: [
+            { title: "帳戶設定" },
+            { title: "帳單查詢" },
+            { title: "登　　出" }
+        ]
+    }
     return (
         <Sidebar>
             <SidebarContent>
+                <Link href="/" className="flex mt-8 ml-4">
+                    <ArrowLeft />
+                    {homeText}
+                </Link>
                 {items.map((group, index) => (
                     <SidebarGroup key={index}>
                         <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
@@ -71,13 +85,13 @@ export async function AppSidebar() {
                     </SidebarGroup>
                 ))}
             </SidebarContent>
-            <SidebarFooter>
+            {/* <SidebarFooter>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton>
-                                    <User2 /> 使用者名稱
+                                    <User2 /> {sideBarData.sidebar_user_name}
                                     <ChevronUp className="ml-auto" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>
@@ -85,20 +99,16 @@ export async function AppSidebar() {
                                 side="top"
                                 className="w-[--radix-popper-anchor-width]"
                             >
-                                <DropdownMenuItem>
-                                    <span>帳戶設定</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    <span>帳單查詢</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    <span>登　　出</span>
-                                </DropdownMenuItem>
+                                {sideBarData.sidebar_dropdown_items.map((item, index) => (
+                                    <DropdownMenuItem key={index}>
+                                        <span>{item.title}</span>
+                                    </DropdownMenuItem>
+                                ))}     
                             </DropdownMenuContent>
                         </DropdownMenu>
                     </SidebarMenuItem>
                 </SidebarMenu>
-            </SidebarFooter>
+            </SidebarFooter> */}
         </Sidebar>
     )
 }

@@ -11,13 +11,13 @@ const NavResponsive = () => {
         {
             id: "1",
             url: "/projects",
-            label: "工坊",
+            label: "進入工坊",
         },
-        {
-            id: "3",
-            url: "/contact",
-            label: "聯絡我們",
-        },
+        // {
+        //     id: "3",
+        //     url: "/contact",
+        //     label: "聯絡我們",
+        // },
     ]
 
     return (

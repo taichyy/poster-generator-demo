@@ -10,9 +10,10 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import ObjAdjusterInput from "./ui/obj-adjuster-input";
-// import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const ObjAdjuster = ({
     artboard, data, artboardItems, setArtboardItems,
@@ -281,7 +282,6 @@ const ObjAdjuster = ({
                 </ScrollArea>
             </SheetContent>
         </Sheet>
-
     );
 }
 
