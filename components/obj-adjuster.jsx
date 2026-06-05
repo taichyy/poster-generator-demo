@@ -1,6 +1,7 @@
 "use client"
-import { useState, useRef, useEffect } from "react";
-import { Hand, ArrowBigRight, X, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
+
+import { useState, useRef } from "react";
+import { Hand, ArrowBigRight, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
 
 import {
     Sheet,

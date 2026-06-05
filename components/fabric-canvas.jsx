@@ -1,4 +1,5 @@
 "use client";
+
 import * as fabric from "fabric";
 import { Square } from "lucide-react";
 import { useEffect, useRef, useState } from "react";

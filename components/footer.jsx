@@ -1,6 +1,5 @@
-import Link from 'next/link'
 import React, { Fragment } from 'react'
-import { FaClock, FaDribbble, FaEnvelope, FaFacebook, FaMapMarkedAlt, FaPhoneAlt, FaTwitter } from 'react-icons/fa'
+import { FaClock, FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from 'react-icons/fa'
 
 const Footer = () => {
     const footerData = {

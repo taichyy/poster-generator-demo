@@ -1,9 +1,9 @@
-import { ArrowLeft, ChevronUp, Headphones, Home, Inbox, Settings, User2 } from "lucide-react"
+import Link from "next/link"
+import { ArrowLeft, Home } from "lucide-react"
 
 import {
     Sidebar,
     SidebarContent,
-    SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
@@ -11,8 +11,6 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu"
-import Link from "next/link"
 
 // Menu items.
 const items = [
