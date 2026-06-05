@@ -39,9 +39,59 @@ const Artboard = ({wpx, hpx, data, scale}) => {
     // Change default artboard here (0, 1, 2, 3)
     const [artboard, setArtoard] = useState(0)
     
+    // Drag state
+    const [draggedItemId, setDraggedItemId] = useState(null);
+    const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+    
     const handleScaleChange = (e) => {
         const newScale = parseFloat(e.target.value);
         setScaleFactor(newScale);
+    };
+    
+    const handleMouseDown = (e, itemId, itemAlt) => {
+        // Don't allow dragging the background image
+        if (itemAlt === "背景圖片") return;
+        
+        if (e.button === 0) { // Left click only
+            setDraggedItemId(itemId);
+            setDragStart({ x: e.clientX, y: e.clientY });
+            e.preventDefault();
+        }
+    };
+
+    const handleMouseMove = (e) => {
+        if (!draggedItemId) return;
+
+        const deltaX = (e.clientX - dragStart.x) / scaleFactor;
+        const deltaY = (e.clientY - dragStart.y) / scaleFactor;
+
+        const updatedArtboardItems = artboardItems[artboard].map(item => {
+            if (item.id === draggedItemId && item.type === "img") {
+                const currentLeft = parseInt(item.property?.left?.split("px")[0] || 0);
+                const currentTop = parseInt(item.property?.top?.split("px")[0] || 0);
+                
+                return {
+                    ...item,
+                    property: {
+                        ...item.property,
+                        left: (currentLeft + deltaX) + "px",
+                        top: (currentTop + deltaY) + "px",
+                    }
+                };
+            }
+            return item;
+        });
+
+        setArtboardItems(prevItems => ({
+            ...prevItems,
+            [artboard]: updatedArtboardItems,
+        }));
+
+        setDragStart({ x: e.clientX, y: e.clientY });
+    };
+
+    const handleMouseUp = () => {
+        setDraggedItemId(null);
     };
     
     // Select which template to use
@@ -348,12 +398,22 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         return items
     }
     
-    const [artboardItems, setArtoardItems] = useState([
+    const [artboardItems, setArtboardItems] = useState([
         addAttributes(artBoardA()), 
         addAttributes(artBoardB()), 
         addAttributes(artBoardC()), 
         addAttributes(artBoardD())
     ])
+    
+    // Update artboardItems when data changes (e.g., background image)
+    useEffect(() => {
+        setArtboardItems([
+            addAttributes(artBoardA()), 
+            addAttributes(artBoardB()), 
+            addAttributes(artBoardC()), 
+            addAttributes(artBoardD())
+        ])
+    }, [data])
     
     useEffect(() => {
         // Reset the size of the artboard
@@ -396,7 +456,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         });
         
         // Update artboardItems
-        setArtoardItems(prevItems => ({
+        setArtboardItems(prevItems => ({
             ...prevItems,
             [artboard]: updatedArtboardItems,
         }));
@@ -416,6 +476,9 @@ const Artboard = ({wpx, hpx, data, scale}) => {
         // Main Adobe Illustrator style artboard container
         <main
             className=" bg-[#5F5F5F] text-white flex flex-col min-h-[600px] z-10 overflow-y-scroll duration-200 transition-all"
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
             style={ full ? {
                 position: "fixed",
                 top: 0,
@@ -461,12 +524,12 @@ const Artboard = ({wpx, hpx, data, scale}) => {
             <div className=" flex flex-1">
                 <div className=" pl-3 pr-3 pt-4 bg-[#535353] space-y-2 flex flex-col">
                     {/* Aside control bar */}
-                    {/* <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtoardItems={setArtoardItems} /> */}
+                    {/* <SampleAdder artboard={artboard} data={data} artboardItems={artboardItems} setArtboardItems={setArtboardItems} /> */}
                     <ObjAdjuster 
                         data={data} 
                         artboard={artboard} 
                         artboardItems={artboardItems} 
-                        setArtoardItems={setArtoardItems} 
+                        setArtboardItems={setArtboardItems} 
                         width={width} setWidth={setWidth}
                         height={height} setHeight={setHeight}
                     />
@@ -508,13 +571,14 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                                     />
                                 ) : item.type == "img" ? (
                                     <Image
+                                        onMouseDown={(e) => handleMouseDown(e, item?.id, item?.alt)}
                                         onClick={()=>handleClick(item?.id)}
                                         src={item?.link}
                                         alt={item?.alt}
                                         width={200}
                                         height={200}
                                         className={cn(
-                                            " pointer-events-auto absolute flex items-center justify-center box-border",
+                                            " pointer-events-auto absolute flex items-center justify-center box-border", 
                                             item?.className
                                         )} 
                                         style={{
@@ -530,8 +594,10 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                                             ...(item?.select ? { 
                                                 boxShadow: '0 0 0 1px #7FCCD8'
                                             } : {}),
+                                            cursor: draggedItemId === item?.id ? "grabbing" : "grab",
                                             ...item?.style
                                         }}
+                                        draggable="false"
                                     />
                                 ) : item.type == "text" ? (
                                     <div 

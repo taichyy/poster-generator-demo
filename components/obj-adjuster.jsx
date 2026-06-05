@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Hand, ArrowBigRight, X, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
 
 import {
@@ -21,8 +21,13 @@ const ObjAdjuster = ({
 }) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    const scrollAreaRef = useRef(null);
+    const itemRefsMap = useRef({});
+    const selectedItemId = useRef(null);
 
     const handleSelectClick = (id) => {
+        selectedItemId.current = id;
+        
         // 使用 map 遍歷 artboardItems 並修改指定 id 的元素的 select 屬性
         const updatedArtboardItems = artboardItems[artboard].map(item => {
             if (item.id === id) {
@@ -37,6 +42,13 @@ const ObjAdjuster = ({
             ...prevItems,
             [artboard]: updatedArtboardItems,
         }));
+
+        // Auto-scroll to selected item
+        setTimeout(() => {
+            if (itemRefsMap.current[id]) {
+                itemRefsMap.current[id].scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        }, 0);
     }
 
     const handleChange = (id, key, value) => {
@@ -75,23 +87,16 @@ const ObjAdjuster = ({
     }
 
     return (
-        <Sheet className="bg-transparent" open={isOpen}>
+        <Sheet className="bg-transparent" open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger onClick={() => {
                 setIsOpen(true);
             }}>
                 <Hand className="cursor-pointer" />
             </SheetTrigger>
             <SheetContent side="left">
-                <div className="flex justify-end">
-                    <X className="cursor-pointer" onClick={() => {
-                        setIsOpen(false);
-                    }} />
-                </div>
                 <SheetHeader>
                     <SheetTitle>元素調整</SheetTitle>
-                    <SheetDescription>
-
-                    </SheetDescription>
+                    <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <ScrollArea className="p-4 border rounded-md w-[350px] h-[95%]">
                     <div className="cursor-pointer">
@@ -142,6 +147,7 @@ const ObjAdjuster = ({
                     {artboardItems[artboard].map((item, index) => (
                         <div
                             key={item.id}
+                            ref={(el) => { if (el) itemRefsMap.current[item.id] = el; }}
                             onClick={() => handleSelectClick(item.id)}
                             className="cursor-pointer"
                             style={{

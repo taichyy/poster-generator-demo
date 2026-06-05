@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeftCircle, Pencil } from "lucide-react";
 
 import {
@@ -22,6 +22,14 @@ const ProjectEditPage = () => {
     const [open, setOpen] = useState(false)
     const [data, setData] = useState(detailData)
     const [bgc, setBgc] = useState(data.bgc)
+
+    // Update data when bgc changes
+    useEffect(() => {
+        setData(prevData => ({
+            ...prevData,
+            bgc: bgc
+        }))
+    }, [bgc])
 
     return (
         <div className="h-full px-2 py-6 flex-1">
