@@ -39,14 +39,6 @@ const ProjectsPage = async ({ searchParams }) => {
     };
 
     return (
-<<<<<<< Updated upstream
-        <main className="flex flex-col px-5 py-5 w-full min-h-screen">
-            <div className="flex justify-between items-center">
-                <div className="flex gap-2">
-                    <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>TAI</AvatarFallback>
-=======
         <main className="flex flex-col px-6 py-8 w-full min-h-screen bg-zinc-50/40">
 
             {/* Page header */}
@@ -57,7 +49,6 @@ const ProjectsPage = async ({ searchParams }) => {
                         <AvatarFallback className="text-xs font-semibold bg-emerald-50 text-emerald-700">
                             {userData.user_name.charAt(0)}
                         </AvatarFallback>
->>>>>>> Stashed changes
                     </Avatar>
                     <div>
                         <h1 className="text-base font-semibold tracking-tight text-zinc-950">
@@ -70,19 +61,6 @@ const ProjectsPage = async ({ searchParams }) => {
                 </div>
 
                 <Dialog>
-<<<<<<< Updated upstream
-                    <Tooltip>
-                        <TooltipTrigger asChild className="cursor-pointer">
-                            <DialogTrigger asChild>
-                                {/* <PlusCircle /> */}
-                            </DialogTrigger>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                            <p>新增海報</p>
-                        </TooltipContent>
-                    </Tooltip>
-                    <DialogContent>
-=======
                     <DialogTrigger asChild>
                         <Button className="inline-flex items-center gap-1.5 h-9 px-4 rounded-lg bg-zinc-950 text-white text-sm font-semibold hover:bg-zinc-800 active:scale-[0.98] transition-all duration-200 border-0">
                             <Plus size={14} weight="bold" />
@@ -90,7 +68,6 @@ const ProjectsPage = async ({ searchParams }) => {
                         </Button>
                     </DialogTrigger>
                     <DialogContent className="rounded-2xl border-zinc-100">
->>>>>>> Stashed changes
                         <DialogHeader>
                             <DialogTitle className="text-base font-semibold tracking-tight">
                                 新增海報專案
