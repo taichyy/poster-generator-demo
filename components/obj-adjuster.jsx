@@ -14,7 +14,12 @@ import {
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import ObjAdjusterInput from "./ui/obj-adjuster-input";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Input } from "@/components/ui/input";
+
+// ScrollArea shimmed with a plain div
+const ScrollArea = ({ className, children }) => (
+    <div className={`overflow-y-auto ${className ?? ""}`}>{children}</div>
+);
 
 const ObjAdjuster = ({
     artboard, data, artboardItems, setArtboardItems,

@@ -1,31 +1,66 @@
-import Link from 'next/link'
-import { CgClose } from 'react-icons/cg'
+import Link from 'next/link';
+import { X } from "@phosphor-icons/react/dist/ssr";
 
-const NavMobile = ({
-    showNav, 
-    navLinks, 
-    setShowNav
-}) => {
-    const navOpen = showNav ? "translate-x-0" : "-translate-x-full"
-    
+const NavMobile = ({ showNav, navLinks, setShowNav }) => {
     return (
-        <div>
+        <>
             {/* Overlay */}
-            <div className={`fixed ${navOpen} inset-0 transform transition-all duration-500 z-[10000] bg-black opacity-70 w-full h-screen`} />
-            {/* Nav links */}
-            <div className={`text-white ${navOpen} fixed inset-0 justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-indigo-900 space-y-6 z-[10006]`}>
-                {navLinks.map((link) => (
-                    <Link href={link.url} key={link.id} onClick={() => setShowNav(false)}>
-                        <p className=" nav_link text-white text-[20px] ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px] w-fit">
-                            {link.label}
-                        </p>
-                    </Link>
-                ))}
-                {/* Close Icon */}
-                <CgClose onClick={() => setShowNav(false)} className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6" />
-            </div>
-        </div>
-    )
-}
+            <div
+                onClick={() => setShowNav(false)}
+                aria-hidden="true"
+                className={`fixed inset-0 z-[9999] bg-zinc-950/70 backdrop-blur-sm transition-opacity duration-300 ${
+                    showNav ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+            />
 
-export default NavMobile
+            {/* Drawer */}
+            <div
+                className={`fixed top-0 left-0 h-full w-[72vw] max-w-[300px] z-[10000] bg-zinc-950 border-r border-white/[0.06] flex flex-col transition-transform duration-300 ease-out ${
+                    showNav ? "translate-x-0" : "-translate-x-full"
+                }`}
+                role="dialog"
+                aria-modal="true"
+                aria-label="ナビゲーション"
+            >
+                {/* Header */}
+                <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06]">
+                    <span className="text-sm font-semibold text-white">選單</span>
+                    <button
+                        onClick={() => setShowNav(false)}
+                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+                        aria-label="關閉選單"
+                    >
+                        <X size={16} weight="bold" className="text-zinc-400" />
+                    </button>
+                </div>
+
+                {/* Links */}
+                <nav className="flex-1 flex flex-col gap-1 px-3 pt-4">
+                    {navLinks.map((link) => (
+                        <Link
+                            href={link.url}
+                            key={link.id}
+                            onClick={() => setShowNav(false)}
+                            className="flex items-center h-11 px-3 rounded-xl text-zinc-300 text-sm font-medium hover:bg-white/[0.06] hover:text-white transition-colors"
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                </nav>
+
+                {/* CTA */}
+                <div className="px-4 pb-8">
+                    <Link
+                        href="/projects"
+                        onClick={() => setShowNav(false)}
+                        className="flex items-center justify-center h-11 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 transition-colors"
+                    >
+                        立即開始
+                    </Link>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default NavMobile;

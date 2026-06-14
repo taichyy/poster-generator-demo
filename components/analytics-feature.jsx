@@ -1,6 +1,16 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { FaCheckCircle } from 'react-icons/fa'
+import Image from 'next/image';
+import { Check } from "@phosphor-icons/react/dist/ssr";
+import Link from 'next/link';
+import RevealStagger from './reveal-stagger';
+
+// Layout family: split left-image / right-text (only used ONCE across the whole page)
+// Previous section was bento grid — this is different
+
+const checkpoints = [
+    "支援批次匯入商品素材",
+    "付費方案享無限使用次數",
+    "版型客製化，精準控制每個細節",
+];
 
 const AnalyticsFeature = () => {
     
@@ -16,47 +26,64 @@ const AnalyticsFeature = () => {
         af_explore_text: "探索更多",
     }
     return (
-        <div className="pt-24 pb-16">
-            {/* Define grid */}
-            <div className="w-[95%] sm:w-[80%] mx-auto items-center grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {/* Image Content */}
-                <div data-aos="fade-up" data-aos-anchor-placement="top-center">
-                    <Image
-                        src="/images/a.jpg"
-                        alt="Analytics"
-                        width={500}
-                        height={500}
-                        className="object-contain"
-                    />
-                </div>
-                {/* Text Content */}
-                <div className="p-6">
-                    <h1 className="text-base font-semibold text-orange-500">
-                        {AFData.af_upper_text}
-                    </h1>
-                    <h1 className="mt-4 text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
-                        {AFData.af_title}
-                    </h1>
-                    <p className="mt-4 text-gray-600 text-sm font-medium leading-[2rem]">
-                        {AFData.af_desc}
-                    </p>
-                    <ul className="mt-7 space-y-2 text-gray-800 ">
-                        {AFData.af_items.map((item, index) => (
-                            <li key={index} className="flex items-center font-semibold">
-                                <FaCheckCircle className="text-green-500 mr-2" />   
-                                {item.item_text}
-                            </li>       
-                        ))}
-                    </ul>
-                    <Link href="/projects">
-                        <button className="mt-8 px-8 py-3 bg-gray-100 text-gray-800 font-semibold rounded-full hover:bg-blue-800 transition-all duration-200 hover:text-white">
-                            {AFData.af_explore_text} &rarr;
-                        </button>
-                    </Link>
+        <section className="py-28 bg-white">
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-24 items-center">
+
+                    {/* Image — left col, slightly wider */}
+                    <RevealStagger delay={0}>
+                        <div className="relative">
+                            {/* Tinted shadow matching section bg */}
+                            <div className="absolute -inset-3 bg-emerald-50 rounded-3xl opacity-60 blur-2xl" />
+                            <div className="relative rounded-2xl overflow-hidden border border-zinc-100 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.1)]">
+                                <Image
+                                    src="https://picsum.photos/seed/design-tool-editor-canvas/700/520"
+                                    alt="海報編輯器操作介面"
+                                    width={700}
+                                    height={520}
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
+                        </div>
+                    </RevealStagger>
+
+                    {/* Text — right col */}
+                    <RevealStagger delay={0.12}>
+                        <div>
+                            {/* No eyebrow here — already used 1 eyebrow in bento hero, respecting the 1-per-3-sections rule */}
+                            <h2 className="text-3xl md:text-[2.4rem] font-semibold tracking-tight leading-[1.15] text-zinc-950 mb-5">
+                                完全掌控
+                                <br />
+                                每一個排版細節
+                            </h2>
+                            <p className="text-zinc-500 text-base leading-relaxed mb-8 max-w-[40ch]">
+                                內建強大視覺編輯器，即時預覽與精準調整，讓每張海報都符合你的品牌風格。
+                            </p>
+
+                            <ul className="flex flex-col gap-3.5 mb-10">
+                                {checkpoints.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 font-medium">
+                                        <span className="mt-0.5 w-5 h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
+                                            <Check size={11} weight="bold" className="text-emerald-600" />
+                                        </span>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <Link
+                                href="/projects"
+                                className="inline-flex items-center h-11 px-7 rounded-full bg-zinc-950 text-white text-sm font-semibold hover:bg-zinc-800 active:scale-[0.98] transition-all duration-200"
+                            >
+                                前往編輯器
+                            </Link>
+                        </div>
+                    </RevealStagger>
+
                 </div>
             </div>
-        </div>
-    )
-}
+        </section>
+    );
+};
 
-export default AnalyticsFeature
+export default AnalyticsFeature;
