@@ -35,6 +35,8 @@ const LogoMark = () => (
 );
 
 const Footer = () => {
+    const year = new Date().getFullYear()
+
     return (
         <footer className="bg-white border-t border-zinc-100">
             <div className="max-w-7xl mx-auto px-6 py-16">
@@ -74,7 +76,7 @@ const Footer = () => {
 
                 <div className="border-t border-zinc-100 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-zinc-400">
-                        &copy; 2024 heytai. All rights reserved.
+                        &copy; {year} heytai. All rights reserved.
                     </p>
                     <div className="flex items-center gap-6">
                         {/* {["Facebook", "Instagram", "X"].map((name) => (
