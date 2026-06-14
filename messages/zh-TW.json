@@ -1,0 +1,460 @@
+{
+    "nav": {
+        "logoAlt": "海報生成標誌。",
+        "demoWarning": "這是 Demo 版本網頁，未串接後端。",
+        "workshop": "工坊",
+        "contactUs": "聯絡我們",
+        "startNow": "立即開始"
+    },
+    "hero": {
+        "title": "海報生成，",
+        "subtitle": "分鐘內",
+        "subtitleEnd": "完稿",
+        "description": "匯入素材、選版型、線上微調，輸出印刷級一番賞海報。無需設計技能。",
+        "primaryButton": "免費開始使用",
+        "secondaryButton": "功能介紹"
+    },
+    "whyChoose": {
+        "sectionTitle": "功能亮點",
+        "sectionDesc": "從素材到完稿，四項核心功能讓海報製作回歸本質。",
+        "bentoEyebrow": "核心流程",
+        "bentoTitle": "三步驟完成\n專業海報輸出",
+        "bentoDesc": "匯入素材 → 選擇版型 → 微調輸出。全程線上完成，不需安裝任何軟體。",
+        "tile0Title": "30 秒出稿",
+        "tile0Desc": "智慧版型引擎自動排版，選好素材即可輸出。",
+        "tile1Title": "資料安全隔離",
+        "tile1Desc": "所有素材加密存儲，嚴格存取控制。",
+        "tile2Title": "逐項精細控制",
+        "tile2Desc": "字體、色彩、位置全部可調，所見即所得。"
+    },
+    "analyticsFeature": {
+        "heading": "完全掌控\n每一個排版細節",
+        "desc": "內建強大視覺編輯器，即時預覽與精準調整，讓每張海報都符合你的品牌風格。",
+        "check0": "支援批次匯入商品素材",
+        "check1": "付費方案享無限使用次數",
+        "check2": "版型客製化，精準控制每個細節",
+        "cta": "前往編輯器"
+    },
+    "offer": {
+        "title": "14 天，免費體驗",
+        "titleHighlight": "完整功能",
+        "desc": "無需信用卡。試用期結束後自動轉為免費方案，不會無故扣款。",
+        "cta": "開始免費試用",
+        "footnote": "無需信用卡 · 隨時可取消"
+    },
+    "footer": {
+        "brand": "海報生成",
+        "tagline": "專為一番賞業者打造的海報生成工具。快速、精準、無需設計技能。",
+        "copyright": "heytai. 版權所有。"
+    },
+    "projects": {
+        "pageTitle": "我的專案",
+        "projectCount": "{count} 個海報專案",
+        "newPoster": "新增海報",
+        "newPosterDialogTitle": "新增海報專案",
+        "newPosterDialogDesc": "確定後將進入海報設定流程。",
+        "cancel": "取消",
+        "confirm": "確定",
+        "colId": "編號",
+        "colName": "海報名稱",
+        "colUpdated": "最後更新時間",
+        "colCreated": "建立時間",
+        "colActions": "操作",
+        "actionsLabel": "操作",
+        "copyId": "複製海報編號",
+        "copyName": "複製海報名稱",
+        "editPoster": "海報編輯",
+        "copySuccess": "複製成功",
+        "search": "搜尋...",
+        "columnSettings": "欄位設定",
+        "selected": "筆內選取了",
+        "rows": "筆",
+        "noResults": "查無資料。"
+    },
+    "newProject": {
+        "panelTitle": "版型設定",
+        "backgroundSection": "背景選擇",
+        "backgroundAlt": "背景樣式",
+        "canvasLabel": "編輯畫布",
+        "exportButton": "匯出海報"
+    },
+    "projectEdit": {
+        "backToProjects": "返回專案列表",
+        "bgTitle": "背景圖片",
+        "bgDesc": "選擇海報背景",
+        "bgAlt": "當前正在使用之海報背景圖片",
+        "basicInfo": "基本資料",
+        "projectName": "專案名稱",
+        "posterTitle": "海報標題名稱",
+        "posterHeading": "海報上方標題",
+        "pricePerDraw": "每抽價格",
+        "bundlePrice": "連抽價格",
+        "draws": "抽",
+        "currency": "元"
+    },
+    "news": {
+        "pageTitle": "最新消息",
+        "unread": "{count} 則未讀",
+        "loadMore": "載入更多",
+        "new": "NEW",
+        "categories": {
+            "newFeature": "新功能",
+            "update": "功能更新",
+            "maintenance": "維護公告",
+            "announcement": "業務公告"
+        },
+        "items": [
+            {
+                "category": "新功能",
+                "categoryColor": "bg-emerald-100 text-emerald-700",
+                "title": "全新海報版型上線：動漫風格系列",
+                "summary": "新增 12 款動漫主題版型，支援橫式與直式格式，適合各類一番賞活動使用。",
+                "date": "2026-06-10",
+                "isNew": true
+            },
+            {
+                "category": "功能更新",
+                "categoryColor": "bg-blue-100 text-blue-700",
+                "title": "匯出解析度升級至 4K",
+                "summary": "Pro 方案以上用戶現可將海報匯出為最高 4K 解析度，適合大型輸出與印刷需求。",
+                "date": "2026-06-03",
+                "isNew": true
+            },
+            {
+                "category": "維護公告",
+                "categoryColor": "bg-amber-100 text-amber-700",
+                "title": "6/15 凌晨系統維護通知",
+                "summary": "本系統將於 2026 年 6 月 15 日 01:00 至 03:00 進行例行維護，期間服務暫停。",
+                "date": "2026-05-28",
+                "isNew": false
+            },
+            {
+                "category": "新功能",
+                "categoryColor": "bg-emerald-100 text-emerald-700",
+                "title": "批次匯出功能正式開放",
+                "summary": "支援一次選取多份海報進行批次下載，大幅節省整理時間，最多可同時匯出 20 份。",
+                "date": "2026-05-20",
+                "isNew": false
+            },
+            {
+                "category": "功能更新",
+                "categoryColor": "bg-blue-100 text-blue-700",
+                "title": "物件對齊輔助線更新",
+                "summary": "畫布編輯器現支援智慧對齊輔助線，移動物件時自動顯示中心線與邊緣對齊提示。",
+                "date": "2026-05-12",
+                "isNew": false
+            },
+            {
+                "category": "業務公告",
+                "categoryColor": "bg-zinc-100 text-zinc-600",
+                "title": "方案定價調整說明",
+                "summary": "為維持服務品質，Starter 方案將於 7 月起每月調整為 NT$299，現有用戶享有 3 個月緩衝期。",
+                "date": "2026-05-01",
+                "isNew": false
+            }
+        ]
+    },
+    "contact": {
+        "pageTitle": "聯絡我們",
+        "pageSubtitle": "我們通常在 1 個工作天內回覆。",
+        "formTitle": "送出問題或意見",
+        "labelName": "姓名",
+        "placeholderName": "田中太郎",
+        "labelEmail": "電子郵件",
+        "labelSubject": "主旨",
+        "placeholderSubject": "問題或意見摘要",
+        "labelMessage": "訊息內容",
+        "placeholderMessage": "請詳細描述您的問題或意見...",
+        "submitButton": "送出訊息",
+        "successTitle": "已送出您的訊息",
+        "successDesc": "我們將於 1 個工作天內回覆您。",
+        "sendAnother": "再送一則",
+        "otherContactTitle": "其他聯繫方式",
+        "faqTitle": "常見問題",
+        "quickLinks": [
+            {
+                "label": "使用教學文件",
+                "desc": "逐步圖文說明，快速上手"
+            },
+            {
+                "label": "線上即時聊天",
+                "desc": "平日 09:00 - 18:00"
+            },
+            {
+                "label": "寄送電子郵件",
+                "desc": "tai@heytai.dev"
+            }
+        ],
+        "faq": [
+            {
+                "q": "如何匯入自訂背景圖片？",
+                "a": "進入海報編輯器後，點選左側「背景選擇」區塊，再按「上傳圖片」即可匯入 JPG 或 PNG 格式的自訂背景。"
+            },
+            {
+                "q": "匯出的海報最高解析度是多少？",
+                "a": "免費方案最高支援 1× (72 DPI)，Pro 方案以上可匯出至 4K (3× / 216 DPI)，適用於大型印刷輸出。"
+            },
+            {
+                "q": "是否支援多人同時編輯？",
+                "a": "目前版本為單人編輯模式。多人協作功能正在開發中，預計於 Q3 推出，敬請期待。"
+            },
+            {
+                "q": "忘記密碼該如何處理？",
+                "a": "前往登入頁面，點選「忘記密碼」，輸入註冊時使用的電子郵件，系統將寄送重設連結。"
+            }
+        ]
+    },
+    "settings": {
+        "pageTitle": "系統設定",
+        "pageSubtitle": "管理工作區偏好與帳號行為。",
+        "saveButton": "儲存變更",
+        "saved": "已儲存變更",
+        "tabs": {
+            "general": "一般設定",
+            "notifications": "通知設定",
+            "privacy": "隱私與安全",
+            "appearance": "外觀",
+            "language": "語系與地區"
+        },
+        "general": {
+            "workspaceName": "工作區名稱",
+            "workspaceNameDesc": "顯示於側欄頂部的識別名稱。",
+            "workspaceNameDefault": "田中フォーチュン 的工作區",
+            "exportFormat": "預設匯出格式",
+            "exportFormatDesc": "新建海報時的預設輸出格式。",
+            "exportFormatOptions": {
+                "png": "PNG (高品質)",
+                "jpg": "JPG (較小檔案)",
+                "webp": "WebP"
+            },
+            "resolution": "預設解析度",
+            "resolutionDesc": "匯出時的像素密度。",
+            "autosave": "自動儲存",
+            "autosaveDesc": "每隔 30 秒自動儲存編輯中的海報。",
+            "showGrid": "顯示格線",
+            "showGridDesc": "在畫布上顯示對齊格線。",
+            "snapToGrid": "吸附至格線",
+            "snapToGridDesc": "移動物件時自動吸附至最近的格線。"
+        },
+        "notifications": {
+            "systemUpdates": "系統更新通知",
+            "systemUpdatesDesc": "有新版本或功能更新時通知我。",
+            "exportDone": "海報匯出完成",
+            "exportDoneDesc": "海報匯出完成時顯示通知。",
+            "billingReminder": "帳單到期提醒",
+            "billingReminderDesc": "方案到期前 7 天發送提醒。",
+            "marketing": "行銷郵件",
+            "marketingDesc": "接收產品功能介紹與優惠資訊。",
+            "weeklySummary": "每週使用摘要",
+            "weeklySummaryDesc": "每週一寄送上週使用統計報告。"
+        },
+        "privacy": {
+            "dataCollection": "使用資料收集",
+            "dataCollectionDesc": "允許收集匿名使用資料以改善產品。",
+            "errorReporting": "錯誤回報",
+            "errorReportingDesc": "發生錯誤時自動送出錯誤報告。",
+            "twoFactor": "兩步驟驗證",
+            "twoFactorDesc": "登入時要求手機驗證碼。",
+            "loginAlerts": "登入通知",
+            "loginAlertsDesc": "偵測到新裝置登入時寄送通知信。",
+            "dataManagement": "資料管理",
+            "downloadData": "下載我的資料",
+            "deleteAccount": "刪除帳號"
+        },
+        "appearance": {
+            "themeMode": "主題模式",
+            "themes": {
+                "light": "淺色",
+                "dark": "深色",
+                "system": "跟隨系統"
+            },
+            "compactMode": "緊湊模式",
+            "compactModeDesc": "縮小間距，讓畫面顯示更多內容。",
+            "reduceMotion": "減少動態效果",
+            "reduceMotionDesc": "減少介面動態效果（適合動作敏感使用者）。"
+        },
+        "language": {
+            "interfaceLanguage": "介面語言",
+            "interfaceLanguageDesc": "系統介面的顯示語言。",
+            "languages": {
+                "zhTW": "繁體中文",
+                "zhCN": "简体中文",
+                "en": "English",
+                "ja": "日本語"
+            },
+            "timezone": "時區",
+            "timezoneDesc": "影響日期與時間的顯示方式。",
+            "timezones": {
+                "taipei": "亞洲/台北 (UTC+8)",
+                "tokyo": "亞洲/東京 (UTC+9)",
+                "utc": "UTC+0"
+            },
+            "dateFormat": "日期格式",
+            "dateFormatDesc": "選擇日期顯示格式。",
+            "dateFormats": {
+                "ymd": "YYYY/MM/DD",
+                "dmy": "DD/MM/YYYY",
+                "mdy": "MM/DD/YYYY"
+            }
+        }
+    },
+    "sidebar": {
+        "brand": "海報生成",
+        "groupFeatures": "功能",
+        "groupOther": "其他",
+        "projects": "海報管理",
+        "settings": "系統設定",
+        "news": "最新消息",
+        "contact": "聯絡我們",
+        "account": "帳戶設定",
+        "billing": "帳單查詢",
+        "username": "使用者名稱",
+        "accountSettings": "帳戶設定",
+        "logout": "登出"
+    },
+    "auth": {
+    "brandTagline": "「30 秒出稿，讓你專注在銷售，而不是設計。」",
+    "brandUsedBy": "已有 1,247 位一番賞業者每週使用。",
+    "logoLabel": "海報生成",
+    "login": {
+      "title": "歡迎回來",
+      "subtitle": "登入帳戶繼續使用。",
+      "labelEmail": "電子郵件",
+      "labelPassword": "密碼",
+      "forgotPassword": "忘記密碼？",
+      "submitButton": "登入",
+      "divider": "或",
+      "noAccount": "還沒有帳戶？",
+      "registerLink": "免費註冊"
+    },
+    "register": {
+      "title": "建立帳號",
+      "subtitle": "開始 14 天免費試用。無需信用卡。",
+      "labelName": "姓名",
+      "placeholderName": "田中太郎",
+      "labelEmail": "電子郵件",
+      "labelPassword": "密碼",
+      "placeholderPassword": "至少 8 個字元",
+      "labelConfirm": "確認密碼",
+      "placeholderConfirm": "再次輸入密碼",
+      "terms": "註冊即表示同意",
+      "termsLink": "服務條款",
+      "and": "與",
+      "privacyLink": "隱私政策",
+      "submitButton": "建立帳號",
+      "divider": "或",
+      "hasAccount": "已有帳戶？",
+      "loginLink": "登入"
+    },
+    "forgotPassword": {
+      "title": "重設密碼",
+      "subtitle": "輸入您的電子郵件，我們將寄送重設連結。",
+      "labelEmail": "電子郵件",
+      "submitButton": "寄送重設連結",
+      "backToLogin": "返回登入",
+      "successTitle": "請查看您的信箱",
+      "successDesc": "我們已將密碼重設連結寄送至您的電子郵件。",
+      "resend": "重新寄送"
+    }
+  },
+        "pageTitle": "帳戶設定",
+        "pageSubtitle": "管理個人資料與登入憑證。",
+        "avatarSection": "個人頭像",
+        "avatarSectionDesc": "建議使用 200×200 px 以上的正方形圖片。",
+        "joinedAt": "加入日期：",
+        "basicInfoSection": "基本資料",
+        "basicInfoSectionDesc": "這些資訊會顯示在您的帳戶頁面。",
+        "labelDisplayName": "顯示名稱",
+        "labelEmail": "電子郵件",
+        "labelPhone": "電話",
+        "labelCompany": "公司 / 店名",
+        "labelRole": "職稱",
+        "save": "儲存",
+        "saved": "已儲存",
+        "passwordSection": "變更密碼",
+        "passwordSectionDesc": "建議定期更換密碼以確保帳號安全。",
+        "labelCurrentPassword": "目前密碼",
+        "placeholderCurrentPassword": "輸入目前密碼",
+        "labelNewPassword": "新密碼",
+        "placeholderNewPassword": "至少 8 個字元",
+        "labelConfirmPassword": "確認新密碼",
+        "placeholderConfirmPassword": "再次輸入新密碼",
+        "updatePassword": "更新密碼",
+        "passwordUpdated": "密碼已更新",
+        "dangerSection": "帳號管理",
+        "logoutAllDevices": "登出所有裝置",
+        "deactivateAccount": "停用帳號"
+    },
+    "billing": {
+        "pageTitle": "帳單查詢",
+        "pageSubtitle": "查看目前方案與過往帳單紀錄。",
+        "currentPlan": "目前方案",
+        "active": "使用中",
+        "renewsAt": "續訂日期：",
+        "upgrade": "升級方案",
+        "cancelSubscription": "取消訂閱",
+        "paymentMethod": "付款方式",
+        "cardEnding": "Visa 結尾 4242",
+        "cardExpiry": "到期：08 / 2028",
+        "changeCard": "更換卡片",
+        "planComparison": "方案比較",
+        "currentBadge": "目前",
+        "choosePlan": "選擇此方案",
+        "invoiceHistory": "帳單紀錄",
+        "downloadAll": "全部下載",
+        "paid": "已付款",
+        "planFree": "免費版",
+        "planStarter": "Starter",
+        "planPro": "Pro",
+        "perMonth": "/月",
+        "trialPeriod": "試用期",
+        "featFreeProjects": "最多 3 個海報專案",
+        "featFreeResolution": "1× 解析度匯出",
+        "featFreeTemplates": "基本版型",
+        "featStarterProjects": "最多 20 個海報專案",
+        "featStarterResolution": "2× 解析度匯出",
+        "featStarterTemplates": "所有版型",
+        "featStarterSupport": "電子郵件支援",
+        "featProProjects": "無限海報專案",
+        "featProResolution": "4K 解析度匯出",
+        "featProBatch": "批次匯出",
+        "featProSupport": "優先客服支援",
+        "currentPlanName": "Pro 方案",
+        "currentPlanPeriod": "月"
+    },
+  "editor": {
+    "elementAdjustment": "元素調整",
+    "workspace": "工作區域",
+    "width": "寬度",
+    "workspaceWidth": "工作區域寬度",
+    "height": "高度",
+    "workspaceHeight": "工作區域高度",
+    "unit": "mm",
+    "scale": "縮放",
+    "scaleRatio": "縮放比例，單位100%",
+    "scaleUnit": "*100%",
+    "xAxisPositioning": "X軸定位",
+    "unitMm": "單位mm",
+    "xAxisPositioningRight": "X軸定位(右)",
+    "unitMmFromRight": "單位mm(自右側)",
+    "yAxisPositioning": "Y軸定位",
+    "textAlignment": "文字對齊",
+    "leftRight": "左邊 / 右邊",
+    "backgroundImageSettings": "背景圖片設定",
+    "backgroundImage": "背景圖片"
+  },
+  "common": {
+    "home": "首頁",
+    "loading": "加載中...",
+    "error": "錯誤",
+    "success": "成功",
+    "cancel": "取消",
+    "delete": "刪除",
+    "edit": "編輯",
+    "save": "儲存",
+    "submit": "提交",
+    "prevPage": "上一頁",
+    "nextPage": "下一頁"
+  }
+}
+}

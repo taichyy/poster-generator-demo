@@ -5,10 +5,12 @@ import Image from "next/image";
 
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
+import { useI18n } from "@/hooks/use-i18n";
 
 const ImgPicker = ({open, setOpen, bgc, setBgc}) => {
 
     const [full, setFull] = useState(false)
+    const t = useI18n()
     
     // 1~8
     const bgcCount = 8
@@ -23,16 +25,16 @@ const ImgPicker = ({open, setOpen, bgc, setBgc}) => {
     >
         <div className=" px-10 pt-5">
             <div className=" flex justify-between">
-                <span><X size={32} onClick={()=>setOpen(false)} /></span>
+                <span><X className="cursor-pointer" size={32} onClick={()=>setOpen(false)} /></span>
                 { full ? (
-                    <span><ArrowDownFromLine size={32} onClick={()=>setFull(false)} /></span>
+                    <span><ArrowDownFromLine className="cursor-pointer" size={32} onClick={()=>setFull(false)} /></span>
                 ) : (
-                    <span><ArrowUpFromLine size={32} onClick={()=>setFull(true)} /></span>
+                    <span><ArrowUpFromLine className="cursor-pointer" size={32} onClick={()=>setFull(true)} /></span>
                 )}
             </div>
             <div className=" mt-2">
                 <div>
-                    <h3 className=" font-medium leading-none">背景圖片設定</h3>
+                    <h3 className=" font-medium leading-none">{t('editor.backgroundImageSettings')}</h3>
                 </div>
                 <Separator className="my-3" />
                 {/* <div className="flex items-center space-x-2">
@@ -46,9 +48,10 @@ const ImgPicker = ({open, setOpen, bgc, setBgc}) => {
                     <div key={index} className="relative m-2 aspect-video" onClick={()=>setBgc(index+1)}>
                         <Image
                             src={`/posterAssets/images/backgrounds/${index+1}.png`}
-                            alt={`背景圖片${index+1}`}
+                            alt={`${t('editor.backgroundImage')} ${index+1}`}
                             fill
                             style={{objectFit: "cover"}}
+                            className="cursor-pointer"
                         />
                     </div>
                 ))}

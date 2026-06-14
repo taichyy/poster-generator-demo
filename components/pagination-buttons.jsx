@@ -14,6 +14,7 @@ import {
 } from "./ui/pagination";
 import { cn } from "@/lib/utils";
 import { navigate } from "@/lib/actions";
+import { useI18n } from "@/hooks/use-i18n";
 
 export const PaginationButtons = ({
     // Pass "params" (Append page in search params) | "hook" (Manage using setPage()).
@@ -33,6 +34,7 @@ export const PaginationButtons = ({
 }) => {
     const router = useRouter();
     const pathname = usePathname()
+    const t = useI18n();
 
     page = parseInt(page);
     const totalPage = Math.ceil(total / count);
@@ -132,6 +134,7 @@ export const PaginationButtons = ({
                         <PaginationContent>
                             <PaginationItem>
                                 <PaginationPrevious
+                                    label={t('common.prevPage')}
                                     className={cn(
                                         "cursor-pointer",
                                         !(page - 1 > 0) &&
@@ -158,6 +161,7 @@ export const PaginationButtons = ({
                             <PageBtn num={totalPage} />
                             <PaginationItem>
                                 <PaginationNext
+                                    label={t('common.nextPage')}
                                     className={cn(
                                         "cursor-pointer",
                                         !(page + 1 <= totalPage) &&

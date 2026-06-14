@@ -1,0 +1,460 @@
+{
+    "nav": {
+        "logoAlt": "Poster Generator logo.",
+        "demoWarning": "This is a demo website, no backend integrated.",
+        "workshop": "Workshop",
+        "contactUs": "Contact Us",
+        "startNow": "Get Started"
+    },
+    "hero": {
+        "title": "Poster Generation,",
+        "subtitle": "minutes",
+        "subtitleEnd": " to finish",
+        "description": "Import materials, select templates, adjust online, and generate print-quality raffle posters. No design skills required.",
+        "primaryButton": "Start Free",
+        "secondaryButton": "Features"
+    },
+    "whyChoose": {
+        "sectionTitle": "Features",
+        "sectionDesc": "Four core features that bring poster creation back to its essence.",
+        "bentoEyebrow": "Core Flow",
+        "bentoTitle": "Three Steps to\nProfessional Output",
+        "bentoDesc": "Import materials → Select template → Adjust & export. Entirely online, no software to install.",
+        "tile0Title": "30-second output",
+        "tile0Desc": "Smart template engine handles layout automatically — just pick your assets and export.",
+        "tile1Title": "Data isolation",
+        "tile1Desc": "All assets are encrypted at rest with strict access controls.",
+        "tile2Title": "Fine-grained control",
+        "tile2Desc": "Typography, color, position — all adjustable. What you see is what you get."
+    },
+    "analyticsFeature": {
+        "heading": "Full control over\nevery layout detail",
+        "desc": "Built-in visual editor with live preview and precise adjustments — so every poster matches your brand.",
+        "check0": "Bulk import of product assets",
+        "check1": "Unlimited usage on paid plans",
+        "check2": "Template customisation with pixel-level control",
+        "cta": "Open Editor"
+    },
+    "offer": {
+        "title": "14 days, try the",
+        "titleHighlight": "full feature set",
+        "desc": "No credit card required. After the trial you roll onto the free plan automatically — no surprise charges.",
+        "cta": "Start Free Trial",
+        "footnote": "No credit card · Cancel any time"
+    },
+    "footer": {
+        "brand": "Poster Generator",
+        "tagline": "The poster generation tool built for raffle operators. Fast, precise, no design skills needed.",
+        "copyright": "heytai. All rights reserved."
+    },
+    "projects": {
+        "pageTitle": "My Projects",
+        "projectCount": "{count} poster projects",
+        "newPoster": "New Poster",
+        "newPosterDialogTitle": "New Poster Project",
+        "newPosterDialogDesc": "You will be taken to the poster setup flow.",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "colId": "ID",
+        "colName": "Poster Name",
+        "colUpdated": "Last Updated",
+        "colCreated": "Created At",
+        "colActions": "Actions",
+        "actionsLabel": "Actions",
+        "copyId": "Copy poster ID",
+        "copyName": "Copy poster name",
+        "editPoster": "Edit poster",
+        "copySuccess": "Copied!",
+        "search": "Search...",
+        "columnSettings": "Columns",
+        "selected": "selected of",
+        "rows": "rows",
+        "noResults": "No results."
+    },
+    "newProject": {
+        "panelTitle": "Template Settings",
+        "backgroundSection": "Background",
+        "backgroundAlt": "Background style",
+        "canvasLabel": "Edit Canvas",
+        "exportButton": "Export Poster"
+    },
+    "projectEdit": {
+        "backToProjects": "Back to projects",
+        "bgTitle": "Background Image",
+        "bgDesc": "Choose poster background",
+        "bgAlt": "Current poster background",
+        "basicInfo": "Basic Info",
+        "projectName": "Project Name",
+        "posterTitle": "Poster Title",
+        "posterHeading": "Poster Heading",
+        "pricePerDraw": "Price per Draw",
+        "bundlePrice": "Bundle Price",
+        "draws": "draws",
+        "currency": ""
+    },
+    "news": {
+        "pageTitle": "News",
+        "unread": "{count} unread",
+        "loadMore": "Load more",
+        "new": "NEW",
+        "categories": {
+            "newFeature": "New Feature",
+            "update": "Update",
+            "maintenance": "Maintenance",
+            "announcement": "Announcement"
+        },
+        "items": [
+            {
+                "category": "New Feature",
+                "categoryColor": "bg-emerald-100 text-emerald-700",
+                "title": "New poster templates: Anime series",
+                "summary": "12 new anime-themed templates added, supporting both landscape and portrait formats.",
+                "date": "2026-06-10",
+                "isNew": true
+            },
+            {
+                "category": "Update",
+                "categoryColor": "bg-blue-100 text-blue-700",
+                "title": "Export resolution upgraded to 4K",
+                "summary": "Pro plan users can now export posters up to 4K resolution for large-format printing.",
+                "date": "2026-06-03",
+                "isNew": true
+            },
+            {
+                "category": "Maintenance",
+                "categoryColor": "bg-amber-100 text-amber-700",
+                "title": "Scheduled maintenance on 6/15",
+                "summary": "The system will undergo routine maintenance on June 15, 2026 from 01:00 to 03:00. Service will be unavailable during this window.",
+                "date": "2026-05-28",
+                "isNew": false
+            },
+            {
+                "category": "New Feature",
+                "categoryColor": "bg-emerald-100 text-emerald-700",
+                "title": "Batch export now available",
+                "summary": "Select multiple posters and download them in one go — up to 20 at a time.",
+                "date": "2026-05-20",
+                "isNew": false
+            },
+            {
+                "category": "Update",
+                "categoryColor": "bg-blue-100 text-blue-700",
+                "title": "Smart alignment guides",
+                "summary": "The canvas editor now shows smart alignment guides when moving objects.",
+                "date": "2026-05-12",
+                "isNew": false
+            },
+            {
+                "category": "Announcement",
+                "categoryColor": "bg-zinc-100 text-zinc-600",
+                "title": "Pricing update",
+                "summary": "The Starter plan will be adjusted to NT$299/month from July. Existing users have a 3-month grace period.",
+                "date": "2026-05-01",
+                "isNew": false
+            }
+        ]
+    },
+    "contact": {
+        "pageTitle": "Contact Us",
+        "pageSubtitle": "We usually respond within 1 business day.",
+        "formTitle": "Send us a message",
+        "labelName": "Name",
+        "placeholderName": "John Smith",
+        "labelEmail": "Email",
+        "labelSubject": "Subject",
+        "placeholderSubject": "Brief summary of your question",
+        "labelMessage": "Message",
+        "placeholderMessage": "Please describe your issue in detail...",
+        "submitButton": "Send Message",
+        "successTitle": "Message sent!",
+        "successDesc": "We will get back to you within 1 business day.",
+        "sendAnother": "Send another",
+        "otherContactTitle": "Other ways to reach us",
+        "faqTitle": "FAQ",
+        "quickLinks": [
+            {
+                "label": "Documentation",
+                "desc": "Step-by-step guides to get started fast"
+            },
+            {
+                "label": "Live chat",
+                "desc": "Weekdays 09:00 – 18:00"
+            },
+            {
+                "label": "Email us",
+                "desc": "tai@heytai.dev"
+            }
+        ],
+        "faq": [
+            {
+                "q": "How do I import a custom background?",
+                "a": "Open the poster editor, click \"Background\" on the left panel, then click \"Upload Image\" to import a JPG or PNG file."
+            },
+            {
+                "q": "What is the maximum export resolution?",
+                "a": "Free plan supports 1× (72 DPI). Pro plan supports up to 4K (3× / 216 DPI) for large-format printing."
+            },
+            {
+                "q": "Is simultaneous multi-user editing supported?",
+                "a": "The current version is single-user. Collaborative editing is in development and expected in Q3."
+            },
+            {
+                "q": "I forgot my password. What should I do?",
+                "a": "Go to the login page, click \"Forgot password\", enter your registered email, and a reset link will be sent."
+            }
+        ]
+    },
+    "settings": {
+        "pageTitle": "Settings",
+        "pageSubtitle": "Manage workspace preferences and account behaviour.",
+        "saveButton": "Save Changes",
+        "saved": "Changes saved",
+        "tabs": {
+            "general": "General",
+            "notifications": "Notifications",
+            "privacy": "Privacy & Security",
+            "appearance": "Appearance",
+            "language": "Language & Region"
+        },
+        "general": {
+            "workspaceName": "Workspace name",
+            "workspaceNameDesc": "Shown at the top of the sidebar.",
+            "workspaceNameDefault": "My Workspace",
+            "exportFormat": "Default export format",
+            "exportFormatDesc": "Output format for new posters.",
+            "exportFormatOptions": {
+                "png": "PNG (high quality)",
+                "jpg": "JPG (smaller file)",
+                "webp": "WebP"
+            },
+            "resolution": "Default resolution",
+            "resolutionDesc": "Pixel density on export.",
+            "autosave": "Auto-save",
+            "autosaveDesc": "Automatically save posters every 30 seconds.",
+            "showGrid": "Show grid",
+            "showGridDesc": "Display alignment grid on the canvas.",
+            "snapToGrid": "Snap to grid",
+            "snapToGridDesc": "Snap objects to the nearest grid line when moving."
+        },
+        "notifications": {
+            "systemUpdates": "System updates",
+            "systemUpdatesDesc": "Notify me when a new version or feature is released.",
+            "exportDone": "Export complete",
+            "exportDoneDesc": "Show a notification when a poster export finishes.",
+            "billingReminder": "Billing reminder",
+            "billingReminderDesc": "Send a reminder 7 days before the plan renews.",
+            "marketing": "Marketing emails",
+            "marketingDesc": "Receive product news and special offers.",
+            "weeklySummary": "Weekly usage summary",
+            "weeklySummaryDesc": "Receive a usage report every Monday."
+        },
+        "privacy": {
+            "dataCollection": "Usage data collection",
+            "dataCollectionDesc": "Allow anonymous usage data to help improve the product.",
+            "errorReporting": "Error reporting",
+            "errorReportingDesc": "Automatically send error reports when something goes wrong.",
+            "twoFactor": "Two-factor authentication",
+            "twoFactorDesc": "Require a phone verification code at login.",
+            "loginAlerts": "Login alerts",
+            "loginAlertsDesc": "Send an email when a new device logs in.",
+            "dataManagement": "Data management",
+            "downloadData": "Download my data",
+            "deleteAccount": "Delete account"
+        },
+        "appearance": {
+            "themeMode": "Theme mode",
+            "themes": {
+                "light": "Light",
+                "dark": "Dark",
+                "system": "System"
+            },
+            "compactMode": "Compact mode",
+            "compactModeDesc": "Reduce spacing to fit more content on screen.",
+            "reduceMotion": "Reduce motion",
+            "reduceMotionDesc": "Minimise animations (recommended for motion-sensitive users)."
+        },
+        "language": {
+            "interfaceLanguage": "Interface language",
+            "interfaceLanguageDesc": "Display language for the UI.",
+            "languages": {
+                "zhTW": "Traditional Chinese",
+                "zhCN": "Simplified Chinese",
+                "en": "English",
+                "ja": "Japanese"
+            },
+            "timezone": "Timezone",
+            "timezoneDesc": "Affects how dates and times are displayed.",
+            "timezones": {
+                "taipei": "Asia/Taipei (UTC+8)",
+                "tokyo": "Asia/Tokyo (UTC+9)",
+                "utc": "UTC+0"
+            },
+            "dateFormat": "Date format",
+            "dateFormatDesc": "Choose how dates are displayed.",
+            "dateFormats": {
+                "ymd": "YYYY/MM/DD",
+                "dmy": "DD/MM/YYYY",
+                "mdy": "MM/DD/YYYY"
+            }
+        }
+    },
+    "sidebar": {
+        "brand": "Poster Generator",
+        "groupFeatures": "Features",
+        "groupOther": "Other",
+        "projects": "Poster Management",
+        "settings": "Settings",
+        "news": "News",
+        "contact": "Contact Us",
+        "account": "Account Settings",
+        "billing": "Billing",
+        "username": "Username",
+        "accountSettings": "Account Settings",
+        "logout": "Log Out"
+    },
+    "auth": {
+        "brandTagline": "\"30-second output. Focus on sales, not design.\"",
+        "brandUsedBy": "Used by 1,247 raffle operators every week.",
+        "logoLabel": "Poster Generator",
+        "login": {
+            "title": "Welcome back",
+            "subtitle": "Sign in to your account to continue.",
+            "labelEmail": "Email",
+            "labelPassword": "Password",
+            "forgotPassword": "Forgot password?",
+            "submitButton": "Sign in",
+            "divider": "or",
+            "noAccount": "Don't have an account?",
+            "registerLink": "Sign up free"
+        },
+        "register": {
+            "title": "Create your account",
+            "subtitle": "Start your 14-day free trial. No credit card required.",
+            "labelName": "Full name",
+            "placeholderName": "John Smith",
+            "labelEmail": "Email",
+            "labelPassword": "Password",
+            "placeholderPassword": "At least 8 characters",
+            "labelConfirm": "Confirm password",
+            "placeholderConfirm": "Enter password again",
+            "terms": "By signing up you agree to our",
+            "termsLink": "Terms of Service",
+            "and": "and",
+            "privacyLink": "Privacy Policy",
+            "submitButton": "Create account",
+            "divider": "or",
+            "hasAccount": "Already have an account?",
+            "loginLink": "Sign in"
+        },
+        "forgotPassword": {
+            "title": "Reset your password",
+            "subtitle": "Enter your email and we'll send you a reset link.",
+            "labelEmail": "Email",
+            "submitButton": "Send reset link",
+            "backToLogin": "Back to sign in",
+            "successTitle": "Check your inbox",
+            "successDesc": "We sent a password reset link to your email address.",
+            "resend": "Resend email"
+        }
+    },
+    "account": {
+        "pageTitle": "Account Settings",
+    "pageSubtitle": "Manage your profile and login credentials.",
+    "avatarSection": "Profile Picture",
+    "avatarSectionDesc": "Recommended: square image at least 200×200 px.",
+    "joinedAt": "Joined:",
+    "basicInfoSection": "Basic Info",
+    "basicInfoSectionDesc": "This information is displayed on your account page.",
+    "labelDisplayName": "Display name",
+    "labelEmail": "Email",
+    "labelPhone": "Phone",
+    "labelCompany": "Company / Store",
+    "labelRole": "Job title",
+    "save": "Save",
+    "saved": "Saved",
+    "passwordSection": "Change Password",
+    "passwordSectionDesc": "We recommend changing your password regularly.",
+    "labelCurrentPassword": "Current password",
+    "placeholderCurrentPassword": "Enter current password",
+    "labelNewPassword": "New password",
+    "placeholderNewPassword": "At least 8 characters",
+    "labelConfirmPassword": "Confirm new password",
+    "placeholderConfirmPassword": "Enter new password again",
+    "updatePassword": "Update Password",
+    "passwordUpdated": "Password updated",
+    "dangerSection": "Account Management",
+    "logoutAllDevices": "Log out all devices",
+    "deactivateAccount": "Deactivate account"
+},
+"billing": {
+    "pageTitle": "Billing",
+    "pageSubtitle": "View your current plan and invoice history.",
+    "currentPlan": "Current Plan",
+    "active": "Active",
+    "renewsAt": "Renews:",
+    "upgrade": "Upgrade Plan",
+    "cancelSubscription": "Cancel Subscription",
+    "paymentMethod": "Payment Method",
+    "cardEnding": "Visa ending 4242",
+    "cardExpiry": "Expires: 08 / 2028",
+    "changeCard": "Change Card",
+    "planComparison": "Plan Comparison",
+    "currentBadge": "Current",
+    "choosePlan": "Choose this plan",
+    "invoiceHistory": "Invoice History",
+    "downloadAll": "Download all",
+    "paid": "Paid",
+    "planFree": "Free",
+    "planStarter": "Starter",
+    "planPro": "Pro",
+    "perMonth": "/mo",
+    "trialPeriod": "Trial",
+    "featFreeProjects": "Up to 3 poster projects",
+    "featFreeResolution": "1× resolution export",
+    "featFreeTemplates": "Basic templates",
+    "featStarterProjects": "Up to 20 poster projects",
+    "featStarterResolution": "2× resolution export",
+    "featStarterTemplates": "All templates",
+    "featStarterSupport": "Email support",
+    "featProProjects": "Unlimited poster projects",
+    "featProResolution": "4K resolution export",
+    "featProBatch": "Batch export",
+    "featProSupport": "Priority support",
+    "currentPlanName": "Pro Plan",
+    "currentPlanPeriod": "month"
+  },
+  "editor": {
+    "elementAdjustment": "Element Adjustment",
+    "workspace": "Workspace",
+    "width": "Width",
+    "workspaceWidth": "Workspace Width",
+    "height": "Height",
+    "workspaceHeight": "Workspace Height",
+    "unit": "mm",
+    "scale": "Scale",
+    "scaleRatio": "Scale ratio, unit 100%",
+    "scaleUnit": "*100%",
+    "xAxisPositioning": "X-axis Positioning",
+    "unitMm": "Unit mm",
+    "xAxisPositioningRight": "X-axis Positioning (Right)",
+    "unitMmFromRight": "Unit mm (from right)",
+    "yAxisPositioning": "Y-axis Positioning",
+    "textAlignment": "Text Alignment",
+    "leftRight": "Left / Right",
+    "backgroundImageSettings": "Background Image Settings",
+    "backgroundImage": "Background Image"
+  },
+  "common": {
+    "home": "Home",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "submit": "Submit",
+    "prevPage": "Previous",
+    "nextPage": "Next"
+  }
+}

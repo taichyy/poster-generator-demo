@@ -14,7 +14,7 @@ import {
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import ObjAdjusterInput from "./ui/obj-adjuster-input";
-import { Input } from "@/components/ui/input";
+import { useI18n } from "@/hooks/use-i18n";
 
 // ScrollArea shimmed with a plain div
 const ScrollArea = ({ className, children }) => (
@@ -30,6 +30,7 @@ const ObjAdjuster = ({
     const scrollAreaRef = useRef(null);
     const itemRefsMap = useRef({});
     const selectedItemId = useRef(null);
+    const t = useI18n();
 
     const handleSelectClick = (id) => {
         selectedItemId.current = id;
@@ -101,42 +102,42 @@ const ObjAdjuster = ({
             </SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader>
-                    <SheetTitle>元素調整</SheetTitle>
+                    <SheetTitle>{t('editor.elementAdjustment')}</SheetTitle>
                     <SheetDescription></SheetDescription>
                 </SheetHeader>
                 <ScrollArea className="p-4 border rounded-md w-[350px] h-[95%]">
                     <div className="cursor-pointer">
-                        <div>工作區域</div>
+                        <div>{t('editor.workspace')}</div>
                         <div className="mx-1 mb-2">
                             <div className="space-y-1">
                                 <div className="flex space-x-3">
                                     <span className="flex justify-center items-center whitespace-nowrap">
                                         <ArrowBigRight />
-                                        寬度
+                                        {t('editor.width')}
                                     </span>
                                     <Input
                                         type="text"
-                                        placeholder="工作區域寬度"
+                                        placeholder={t('editor.workspaceWidth')}
                                         defaultValue={width}
                                         onChange={(e) => setWidth(e.target.value)}
                                     />
                                     <div className="flex justify-center items-center">
-                                        mm
+                                        {t('editor.unit')}
                                     </div>
                                 </div>
                                 <div className="flex space-x-3">
                                     <span className="flex justify-center items-center whitespace-nowrap">
                                         <ArrowBigRight />
-                                        高度
+                                        {t('editor.height')}
                                     </span>
                                     <Input
                                         type="text"
-                                        placeholder="工作區域高度"
+                                        placeholder={t('editor.workspaceHeight')}
                                         defaultValue={height}
                                         onChange={(e) => setHeight(e.target.value)}
                                     />
                                     <div className="flex justify-center items-center">
-                                        mm
+                                        {t('editor.unit')}
                                     </div>
                                 </div>
                             </div>
@@ -177,33 +178,33 @@ const ObjAdjuster = ({
                                             : item?.type == "img" ? (
                                                 <>
                                                     <ObjAdjusterInput
-                                                        text="縮放"
-                                                        append="*100%"
-                                                        placeholder="縮放比例，單位100%"
+                                                        text={t('editor.scale')}
+                                                        append={t('editor.scaleUnit')}
+                                                        placeholder={t('editor.scaleRatio')}
                                                         onChange={(e) => handleChange(item?.id, "scale", e.target.value)}
                                                         defaultValue={item?.scale}
                                                     />
                                                     {item?.property?.left ? (
                                                         <ObjAdjusterInput
-                                                            text="X軸定位"
-                                                            append="mm"
-                                                            placeholder="單位mm"
+                                                            text={t('editor.xAxisPositioning')}
+                                                            append={t('editor.unit')}
+                                                            placeholder={t('editor.unitMm')}
                                                             onChange={(e) => handleChange(item?.id, "left", e.target.value + "px")}
                                                             defaultValue={item?.property?.left.split("px")[0]}
                                                         />
                                                     ) : (
                                                         <ObjAdjusterInput
-                                                            text="X軸定位(右)"
-                                                            append="mm"
-                                                            placeholder="單位mm(自右側)"
+                                                            text={t('editor.xAxisPositioningRight')}
+                                                            append={t('editor.unit')}
+                                                            placeholder={t('editor.unitMmFromRight')}
                                                             onChange={(e) => handleChange(item?.id, "right", e.target.value + "px")}
                                                             defaultValue={item?.property?.right.split("px")[0]}
                                                         />
                                                     )}
                                                     <ObjAdjusterInput
-                                                        text="Y軸定位"
-                                                        append="mm"
-                                                        placeholder="單位mm"
+                                                        text={t('editor.yAxisPositioning')}
+                                                        append={t('editor.unit')}
+                                                        placeholder={t('editor.unitMm')}
                                                         onChange={(e) => handleChange(item?.id, "top", e.target.value + "px")}
                                                         defaultValue={item?.property?.top.split("px")[0]}
                                                     />
@@ -213,41 +214,41 @@ const ObjAdjuster = ({
                                                     // text
                                                     <>
                                                         <ObjAdjusterInput
-                                                            text="縮放"
-                                                            append="*100%"
-                                                            placeholder="縮放比例，單位100%"
+                                                            text={t('editor.scale')}
+                                                            append={t('editor.scaleUnit')}
+                                                            placeholder={t('editor.scaleRatio')}
                                                             onChange={(e) => handleChange(item?.id, "scale", e.target.value)}
                                                             defaultValue={item?.scale}
                                                         />
                                                         {item?.property?.left ? (
                                                             <ObjAdjusterInput
-                                                                text="X軸定位"
-                                                                append="mm"
-                                                                placeholder="單位mm"
+                                                                text={t('editor.xAxisPositioning')}
+                                                                append={t('editor.unit')}
+                                                                placeholder={t('editor.unitMm')}
                                                                 onChange={(e) => handleChange(item?.id, "left", e.target.value + "px")}
                                                                 defaultValue={item?.property?.left.split("px")[0]}
                                                             />
                                                         ) : (
                                                             <ObjAdjusterInput
-                                                                text="X軸定位(右)"
-                                                                append="mm"
-                                                                placeholder="單位mm(自右側)"
+                                                                text={t('editor.xAxisPositioningRight')}
+                                                                append={t('editor.unit')}
+                                                                placeholder={t('editor.unitMmFromRight')}
                                                                 onChange={(e) => handleChange(item?.id, "right", e.target.value + "px")}
                                                                 defaultValue={item?.property?.right.split("px")[0]}
                                                             />
                                                         )}
                                                         <ObjAdjusterInput
-                                                            text="Y軸定位"
-                                                            append="mm"
-                                                            placeholder="單位mm"
+                                                            text={t('editor.yAxisPositioning')}
+                                                            append={t('editor.unit')}
+                                                            placeholder={t('editor.unitMm')}
                                                             onChange={(e) => handleChange(item?.id, "top", e.target.value + "px")}
                                                             defaultValue={item?.property?.top.split("px")[0]}
                                                         />
                                                         {item?.style?.textAlign && (
                                                             <ObjAdjusterInput
-                                                                text="文字對齊"
+                                                                text={t('editor.textAlignment')}
                                                                 append=""
-                                                                placeholder="左邊 / 右邊"
+                                                                placeholder={t('editor.leftRight')}
                                                                 defaultValue={item?.style?.textAlign}
                                                             >
                                                                 <AlignLeft onClick={(e) => handleChange(item?.id, "styleTextAlign", "left")} />
@@ -261,25 +262,25 @@ const ObjAdjuster = ({
                                                         <>
                                                             {item?.property?.left ? (
                                                                 <ObjAdjusterInput
-                                                                    text="X軸定位"
-                                                                    append="mm"
-                                                                    placeholder="單位mm"
+                                                                    text={t('editor.xAxisPositioning')}
+                                                                    append={t('editor.unit')}
+                                                                    placeholder={t('editor.unitMm')}
                                                                     onChange={(e) => handleChange(item?.id, "left", e.target.value + "px")}
                                                                     defaultValue={item?.property?.left.split("px")[0]}
                                                                 />
                                                             ) : (
                                                                 <ObjAdjusterInput
-                                                                    text="X軸定位(右)"
-                                                                    append="mm"
-                                                                    placeholder="單位mm(自右側)"
+                                                                    text={t('editor.xAxisPositioningRight')}
+                                                                    append={t('editor.unit')}
+                                                                    placeholder={t('editor.unitMmFromRight')}
                                                                     onChange={(e) => handleChange(item?.id, "right", e.target.value + "px")}
                                                                     defaultValue={item?.property?.right.split("px")[0]}
                                                                 />
                                                             )}
                                                             <ObjAdjusterInput
-                                                                text="Y軸定位"
-                                                                append="mm"
-                                                                placeholder="單位mm"
+                                                                text={t('editor.yAxisPositioning')}
+                                                                append={t('editor.unit')}
+                                                                placeholder={t('editor.unitMm')}
                                                                 onChange={(e) => handleChange(item?.id, "top", e.target.value + "px")}
                                                                 defaultValue={item?.property?.top.split("px")[0]}
                                                             />

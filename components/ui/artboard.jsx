@@ -500,7 +500,7 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                         step="0.1"
                         value={scaleFactor}
                         onChange={handleScaleChange}
-                        className=" w-[100px]"
+                        className=" w-[100px] cursor-pointer"
                     />
                     <span>
                         {parseInt(scaleFactor * 100)}%
@@ -514,9 +514,9 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                 {/* Full screen / window control */}
                 <div className="flex-1 flex justify-end">
                     {full ? (
-                        <Shrink onClick={() => setFull(false)} />
+                        <Shrink onClick={() => setFull(false)} className=" cursor-pointer" />
                     ) : (
-                        <Expand onClick={() => setFull(true)} />
+                        <Expand onClick={() => setFull(true)} className=" cursor-pointer" />
                     )}
                 </div>
             </div>

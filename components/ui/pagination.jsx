@@ -47,6 +47,7 @@ PaginationLink.displayName = "PaginationLink"
 
 const PaginationPrevious = ({
     className,
+    label = "Previous",
     ...props
 }) => (
     <PaginationLink
@@ -55,13 +56,14 @@ const PaginationPrevious = ({
         className={cn("gap-1 pl-2.5", className)}
         {...props}>
         <ChevronLeft className="w-4 h-4" />
-        <span>上一頁</span>
+        <span>{label}</span>
     </PaginationLink>
 )
 PaginationPrevious.displayName = "PaginationPrevious"
 
 const PaginationNext = ({
     className,
+    label = "Next",
     ...props
 }) => (
     <PaginationLink
@@ -69,7 +71,7 @@ const PaginationNext = ({
         size="default"
         className={cn("gap-1 pr-2.5", className)}
         {...props}>
-        <span>下一頁</span>
+        <span>{label}</span>
         <ChevronRight className="w-4 h-4" />
     </PaginationLink>
 )

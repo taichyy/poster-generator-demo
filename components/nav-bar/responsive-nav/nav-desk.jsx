@@ -1,9 +1,13 @@
 "use client"
+
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { List } from "@phosphor-icons/react";
 import { X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import { List } from "@phosphor-icons/react";
+import { usePathname } from "next/navigation";
+
+import LanguageSwitcher from '@/components/language-switcher';
 
 const LogoMark = () => (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -13,16 +17,10 @@ const LogoMark = () => (
     </svg>
 );
 
-const NavDesk = ({ navLinks, setShowNav }) => {
+const NavDesk = ({ navLinks, setShowNav, locale }) => {
     const pathname = usePathname();
-    const [closed, setClosed] = useState(false) 
-
-    const navData = {
-        nav_logo_src: "/logo.jpg",
-        nav_logo_alt: "Shop logo.",
-        nav_logo_bg: "海報",
-        nav_logo_small: "生成",
-    }
+    const [closed, setClosed] = useState(false);
+    const t = useTranslations('nav');
 
     useEffect(() => {
         setShowNav(false);
@@ -34,30 +32,29 @@ const NavDesk = ({ navLinks, setShowNav }) => {
             {!closed && (
                 <div className="flex justify-between items-center bg-white h-10 text-slate-800 text-lg px-4">
                     <X className="opacity-0" />
-                    This is a demo website, no backend integrated.
-                    <X className="cursor-pointer" onClick={()=>setClosed(true)} />
+                    {t('demoWarning')}
+                    <X className="cursor-pointer" onClick={() => setClosed(true)} />
                 </div>
             )}
             <nav className="bg-zinc-950/90 backdrop-blur-md border-b border-white/[0.06] w-full h-[64px]">
-                <div className="flex items-center h-full justify-between max-w-7xl mx-auto px-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 h-full max-w-7xl mx-auto px-6">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2.5 group" aria-label="海報生成 首頁">
+                    <Link href={`/${locale}`} className="flex items-center gap-2.5 group" aria-label="Poster Generator">
                         <LogoMark />
                         <span className="text-sm font-semibold text-white tracking-tight">
-                            海報生成
+                            heytai
                         </span>
                     </Link>
 
                     {/* Nav links */}
-                    <div className="hidden md:flex items-center gap-8">
+                    <div className="hidden md:flex justify-center items-center gap-8">
                         {navLinks.map((link) => {
                             const isActive = pathname === link.url;
                             return (
                                 <Link
                                     href={link.url}
                                     key={link.id}
-                                    className={`relative text-sm font-medium transition-colors duration-200 pb-0.5 ${isActive ? "text-white" : "text-zinc-400 hover:text-white"
-                                        }`}
+                                    className={`relative text-sm font-medium transition-colors duration-200 pb-0.5 ${isActive ? "text-white" : "text-zinc-400 hover:text-white"}`}
                                 >
                                     {link.label}
                                     {isActive && (
@@ -69,13 +66,14 @@ const NavDesk = ({ navLinks, setShowNav }) => {
                     </div>
 
                     {/* CTA + burger */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-end gap-3">
                         <Link
-                            href="/projects"
+                            href={`/${locale}/projects`}
                             className="hidden md:inline-flex items-center h-9 px-5 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 active:scale-[0.98] transition-all duration-200"
                         >
-                            立即開始
+                            {t('startNow')}
                         </Link>
+                        <LanguageSwitcher />
                         <button
                             onClick={() => setShowNav(true)}
                             className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
@@ -87,7 +85,6 @@ const NavDesk = ({ navLinks, setShowNav }) => {
                 </div>
             </nav>
         </>
-
     );
 };
 

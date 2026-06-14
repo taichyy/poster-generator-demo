@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { X } from "@phosphor-icons/react/dist/ssr";
 
-const NavMobile = ({ showNav, navLinks, setShowNav }) => {
+const NavMobile = ({ showNav, navLinks, setShowNav, locale }) => {
+    const t = useTranslations('nav');
+    
     return (
         <>
             {/* Overlay */}
@@ -24,7 +27,7 @@ const NavMobile = ({ showNav, navLinks, setShowNav }) => {
             >
                 {/* Header */}
                 <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06]">
-                    <span className="text-sm font-semibold text-white">選單</span>
+                    <span className="text-sm font-semibold text-white">Menu</span>
                     <button
                         onClick={() => setShowNav(false)}
                         className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
@@ -51,11 +54,11 @@ const NavMobile = ({ showNav, navLinks, setShowNav }) => {
                 {/* CTA */}
                 <div className="px-4 pb-8">
                     <Link
-                        href="/projects"
+                        href={`/${locale}/projects`}
                         onClick={() => setShowNav(false)}
                         className="flex items-center justify-center h-11 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 transition-colors"
                     >
-                        立即開始
+                        {t('startNow')}
                     </Link>
                 </div>
             </div>

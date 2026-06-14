@@ -1,6 +1,13 @@
-import { CaretUp, Headset, House, Tray, Gear, User, CreditCard } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { getTranslations, getLocale } from "next-intl/server";
+import { CaretUp, Headset, House, Tray, Gear, User } from "@phosphor-icons/react/dist/ssr";
 
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import {
     Sidebar,
     SidebarContent,
@@ -12,29 +19,6 @@ import {
     SidebarMenuItem,
     SidebarFooter,
 } from "@/components/ui/sidebar";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-
-const items = [
-    {
-        title: "功能",
-        links: [
-            { title: "海報管理", url: "/projects", icon: House },
-            { title: "系統設定", url: "/settings", icon: Gear },
-        ],
-    },
-    {
-        title: "其他",
-        links: [
-            { title: "最新消息", url: "/news", icon: Tray },
-            { title: "聯絡我們", url: "/contact", icon: Headset },
-        ],
-    },
-];
 
 const LogoMark = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -44,26 +28,38 @@ const LogoMark = () => (
     </svg>
 );
 
-export async function AppSidebar() {
-    const homeText = "回首頁";
-    const sideBarData = {
-        sidebar_user_name: "使用者名稱",
-        sidebar_dropdown_items: [
-            { title: "帳戶設定" },
-            { title: "帳單查詢" },
-            { title: "登　　出" }
-        ]
-    }
+export const AppSidebar = async () => {
+    const t = await getTranslations('sidebar');
+    const locale = await getLocale();
+
+    const groups = [
+        {
+            title: t('groupFeatures'),
+            links: [
+                { title: t('projects'), url: `/${locale}/projects`, icon: House },
+                { title: t('settings'), url: `/${locale}/settings`, icon: Gear },
+            ],
+        },
+        {
+            title: t('groupOther'),
+            links: [
+                { title: t('news'),    url: `/${locale}/news`,    icon: Tray },
+                { title: t('contact'), url: `/${locale}/contact`, icon: Headset },
+            ],
+        },
+    ];
+
     return (
         <Sidebar>
-            {/* Brand header */}
-            <div className="flex items-center gap-2.5 px-4 h-14 border-b border-sidebar-border shrink-0">
-                <LogoMark />
-                <span className="text-sm font-semibold text-zinc-950">海報生成</span>
-            </div>
+            <Link href={`/${locale}/`} className="cursor-pointer">
+                <div className="flex items-center gap-2.5 px-4 h-14 border-b border-sidebar-border shrink-0">
+                    <LogoMark />
+                    <span className="text-sm font-semibold text-zinc-950">{t('brand')}</span>
+                </div>
+            </Link>
 
             <SidebarContent>
-                {items.map((group, i) => (
+                {groups.map((group, i) => (
                     <SidebarGroup key={i}>
                         <SidebarGroupLabel className="text-[10.5px] tracking-[0.14em] text-zinc-400 uppercase font-medium">
                             {group.title}
@@ -96,22 +92,21 @@ export async function AppSidebar() {
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton className="flex items-center gap-2.5 w-full text-sm font-medium text-zinc-600 hover:bg-zinc-50 rounded-lg px-3 h-10">
                                     <User size={15} weight="duotone" />
-                                    <span className="flex-1 text-left text-zinc-700">使用者名稱</span>
+                                    <span className="flex-1 text-left text-zinc-700">{t('username')}</span>
                                     <CaretUp size={12} className="text-zinc-400" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent
-                                side="top"
-                                className="w-[--radix-popper-anchor-width] rounded-xl border border-zinc-100 shadow-lg"
-                            >
+                            <DropdownMenuContent side="top" className="w-[--radix-popper-anchor-width] rounded-xl border border-zinc-100 shadow-lg">
                                 <DropdownMenuItem asChild className="text-sm cursor-pointer rounded-lg">
-                                    <Link href="/account">帳戶設定</Link>
+                                    <Link href={`/${locale}/account`}>{t('accountSettings')}</Link>
                                 </DropdownMenuItem>
                                 <DropdownMenuItem asChild className="text-sm cursor-pointer rounded-lg">
-                                    <Link href="/billing">帳單查詢</Link>
+                                    <Link href={`/${locale}/billing`}>{t('billing')}</Link>
                                 </DropdownMenuItem>
-                                <DropdownMenuItem className="text-sm text-red-600 cursor-pointer rounded-lg focus:text-red-600 focus:bg-red-50">
-                                    登出
+                                <DropdownMenuItem asChild className="text-sm text-red-600 cursor-pointer rounded-lg focus:text-red-600 focus:bg-red-50">
+                                    <Link href={`/${locale}/login`}>
+                                        {t('logout')}
+                                    </Link>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>

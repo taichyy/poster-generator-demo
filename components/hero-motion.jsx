@@ -1,4 +1,5 @@
 "use client"
+
 import { motion, useReducedMotion } from "motion/react";
 
 const HeroMotion = ({ children }) => {
