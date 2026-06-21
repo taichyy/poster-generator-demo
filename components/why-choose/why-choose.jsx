@@ -36,7 +36,7 @@ const WhyChoose = async () => {
                     <RevealStagger delay={0.1}>
                         <div className="relative col-span-2 rounded-2xl overflow-hidden min-h-[320px] flex flex-col justify-end p-8 group">
                             <Image
-                                src="https://picsum.photos/seed/poster-print-shop-workspace/1200/700"
+                                src="/backgrounds.png"
                                 alt="poster generation flow"
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"

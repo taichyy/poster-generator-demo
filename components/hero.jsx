@@ -58,7 +58,7 @@ const Hero = async () => {
                         />
                         <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
                             <Image
-                                src="https://picsum.photos/seed/poster-editor-tool-ui/800/560"
+                                src="/poster-demo.png"
                                 alt="Poster generation tool interface preview"
                                 width={800}
                                 height={560}
