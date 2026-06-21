@@ -38,7 +38,7 @@ const BillingClient = ({ labels: l }) => {
                         <div>
                             <div className="flex items-center gap-2 mb-1">
                                 <span className="text-lg font-semibold text-zinc-950">{l.currentPlanName}</span>
-                                <span className="inline-flex items-center gap-1 h-5 px-2 rounded-md text-[11px] font-semibold bg-emerald-100 text-emerald-700">
+                                <span className="inline-flex items-center gap-1 h-5 px-2 rounded-md text-[11px] font-semibold bg-red-100 text-red-700">
                                     <CheckCircle size={10} weight="fill" />
                                     {l.active}
                                 </span>
@@ -51,7 +51,7 @@ const BillingClient = ({ labels: l }) => {
                             <ul className="flex flex-col gap-1">
                                 {l.currentPlanFeatures.map((f) => (
                                     <li key={f} className="flex items-center gap-1.5 text-xs text-zinc-600">
-                                        <CheckCircle size={12} weight="fill" className="text-emerald-400 shrink-0" />
+                                        <CheckCircle size={12} weight="fill" className="text-red-500 shrink-0" />
                                         {f}
                                     </li>
                                 ))}
@@ -94,12 +94,12 @@ const BillingClient = ({ labels: l }) => {
                         {l.plans.map((plan) => (
                             <div
                                 key={plan.name}
-                                className={`rounded-xl border px-4 py-4 ${plan.current ? "border-emerald-300 bg-emerald-50/50" : "border-zinc-200 bg-zinc-50/30"}`}
+                                className={`rounded-xl border px-4 py-4 ${plan.current ? "border-red-300 bg-red-50/50" : "border-zinc-200 bg-zinc-50/30"}`}
                             >
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="text-sm font-semibold text-zinc-800">{plan.name}</span>
                                     {plan.current && (
-                                        <span className="h-5 px-1.5 rounded text-[10px] font-bold bg-emerald-400 text-white">{l.currentBadge}</span>
+                                        <span className="h-5 px-1.5 rounded text-[10px] font-bold bg-red-600 text-white">{l.currentBadge}</span>
                                     )}
                                 </div>
                                 <p className="text-base font-semibold text-zinc-950 mb-3">
@@ -108,7 +108,7 @@ const BillingClient = ({ labels: l }) => {
                                 <ul className="flex flex-col gap-1.5 mb-4">
                                     {plan.features.map((f) => (
                                         <li key={f} className="flex items-start gap-1.5 text-xs text-zinc-600">
-                                            <CheckCircle size={11} weight="fill" className="text-emerald-400 mt-0.5 shrink-0" />
+                                            <CheckCircle size={11} weight="fill" className="text-red-500 mt-0.5 shrink-0" />
                                             {f}
                                         </li>
                                     ))}
@@ -149,7 +149,7 @@ const BillingClient = ({ labels: l }) => {
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <span className="text-sm font-semibold text-zinc-800">{inv.amount}</span>
-                                    <span className="inline-flex items-center h-5 px-2 rounded-md text-[11px] font-semibold bg-emerald-100 text-emerald-700">
+                                    <span className="inline-flex items-center h-5 px-2 rounded-md text-[11px] font-semibold bg-red-100 text-red-700">
                                         {l.paid}
                                     </span>
                                     <button className="inline-flex items-center gap-1 text-xs font-medium text-zinc-400 hover:text-zinc-700 transition-colors">

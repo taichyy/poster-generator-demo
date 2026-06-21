@@ -21,8 +21,8 @@ const ForgotPasswordClient = ({ labels: l }) => {
                     {sent ? (
                         /* ── Success state ── */
                         <div className="text-center">
-                            <div className="w-12 h-12 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center mx-auto mb-5">
-                                <EnvelopeSimple size={22} weight="duotone" className="text-emerald-500" />
+                            <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 flex items-center justify-center mx-auto mb-5">
+                                <EnvelopeSimple size={22} weight="duotone" className="text-red-500" />
                             </div>
                             <h1 className="text-2xl font-semibold tracking-tight text-zinc-950 mb-2">
                                 {l.successTitle}

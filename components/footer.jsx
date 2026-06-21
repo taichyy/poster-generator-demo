@@ -1,12 +1,5 @@
+import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
-
-const LogoMark = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="9" height="14" rx="2" fill="#34D399" />
-        <rect x="13" y="2" width="9" height="9" rx="2" fill="#34D399" opacity="0.6" />
-        <rect x="13" y="13" width="9" height="9" rx="2" fill="#34D399" opacity="0.35" />
-    </svg>
-);
 
 const Footer = async () => {
     const t = await getTranslations('footer');
@@ -18,8 +11,7 @@ const Footer = async () => {
                 <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10 mb-12">
                     <div>
                         <div className="flex items-center gap-2 mb-4">
-                            <LogoMark />
-                            <span className="text-sm font-semibold text-zinc-950">{t('brand')}</span>
+                            <Image src="/logo-white.png" alt="一番賞海報生成器" width={100} height={30} className="h-7 w-auto object-contain" />
                         </div>
                         <p className="text-sm text-zinc-500 leading-relaxed max-w-[26ch]">{t('tagline')}</p>
                     </div>

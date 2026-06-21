@@ -15,8 +15,8 @@ const RegisterClient = ({ labels: l }) => {
                 <AuthBrandPanel locale={l.locale} logoLabel={l.logoLabel} tagline={l.brandTagline} />
                 <div className="flex flex-col items-center justify-center px-6 py-16 bg-white">
                     <div className="w-full max-w-sm text-center">
-                        <div className="w-12 h-12 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center mx-auto mb-5">
-                            <CheckCircle size={24} weight="fill" className="text-emerald-500" />
+                        <div className="w-12 h-12 rounded-full bg-red-50 border border-red-100 flex items-center justify-center mx-auto mb-5">
+                            <CheckCircle size={24} weight="fill" className="text-red-500" />
                         </div>
                         <h1 className="text-2xl font-semibold tracking-tight text-zinc-950 mb-2">
                             Account created

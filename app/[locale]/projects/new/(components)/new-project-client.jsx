@@ -55,7 +55,7 @@ const NewProjectClient = ({ labels }) => {
                                                 onClick={() => setBackground(src)}
                                                 className={`relative rounded-xl overflow-hidden aspect-square transition-all duration-200 active:scale-[0.97] ${
                                                     active
-                                                        ? "ring-2 ring-emerald-400 ring-offset-1"
+                                                        ? "ring-2 ring-red-500 ring-offset-1"
                                                         : "ring-1 ring-zinc-200 hover:ring-zinc-400"
                                                 }`}
                                             >

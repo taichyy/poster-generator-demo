@@ -28,7 +28,7 @@ const TextInput = ({ defaultValue, placeholder, type = "text", disabled }) => (
         defaultValue={defaultValue}
         placeholder={placeholder}
         disabled={disabled}
-        className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200 disabled:bg-zinc-50 disabled:text-zinc-400 disabled:cursor-not-allowed"
+        className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200 disabled:bg-zinc-50 disabled:text-zinc-400 disabled:cursor-not-allowed"
     />
 );
 
@@ -67,7 +67,7 @@ const AccountClient = ({ labels: l }) => {
                         <div className="relative">
                             <Avatar className="w-14 h-14 border-2 border-zinc-200">
                                 <AvatarImage src={mockUser.avatar} />
-                                <AvatarFallback className="text-base font-semibold bg-emerald-50 text-emerald-700">
+                                <AvatarFallback className="text-base font-semibold bg-red-50 text-red-700">
                                     {mockUser.name.charAt(0)}
                                 </AvatarFallback>
                             </Avatar>
@@ -100,7 +100,7 @@ const AccountClient = ({ labels: l }) => {
                             <FloppyDisk size={14} weight="bold" />
                             {l.save}
                         </button>
-                        {saved && <span className="text-xs text-emerald-600 font-medium">{l.saved}</span>}
+                        {saved && <span className="text-xs text-red-600 font-medium">{l.saved}</span>}
                     </div>
                 </Section>
 
@@ -118,7 +118,7 @@ const AccountClient = ({ labels: l }) => {
                             <Key size={14} weight="bold" />
                             {l.updatePassword}
                         </button>
-                        {pwSaved && <span className="text-xs text-emerald-600 font-medium">{l.passwordUpdated}</span>}
+                        {pwSaved && <span className="text-xs text-red-600 font-medium">{l.passwordUpdated}</span>}
                     </div>
                 </Section>
 

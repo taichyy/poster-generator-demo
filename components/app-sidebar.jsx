@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations, getLocale } from "next-intl/server";
 import { CaretUp, Headset, House, Tray, Gear, User } from "@phosphor-icons/react/dist/ssr";
 
@@ -19,14 +20,6 @@ import {
     SidebarMenuItem,
     SidebarFooter,
 } from "@/components/ui/sidebar";
-
-const LogoMark = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="9" height="14" rx="2" fill="#34D399" />
-        <rect x="13" y="2" width="9" height="9" rx="2" fill="#34D399" opacity="0.6" />
-        <rect x="13" y="13" width="9" height="9" rx="2" fill="#34D399" opacity="0.35" />
-    </svg>
-);
 
 export const AppSidebar = async () => {
     const t = await getTranslations('sidebar');
@@ -52,9 +45,8 @@ export const AppSidebar = async () => {
     return (
         <Sidebar>
             <Link href={`/${locale}/`} className="cursor-pointer">
-                <div className="flex items-center gap-2.5 px-4 h-14 border-b border-sidebar-border shrink-0">
-                    <LogoMark />
-                    <span className="text-sm font-semibold text-zinc-950">{t('brand')}</span>
+                <div className="flex items-center gap-2.5 px-4 h-14 border-b border-sidebar-border shrink-0 bg-zinc-950">
+                    <Image src="/logo-main.png" alt="一番賞海報生成器" width={110} height={32} className="h-8 w-auto object-contain" />
                 </div>
             </Link>
 

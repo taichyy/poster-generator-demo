@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { X } from "@phosphor-icons/react/dist/ssr";
 
@@ -56,7 +57,7 @@ const NavMobile = ({ showNav, navLinks, setShowNav, locale }) => {
                     <Link
                         href={`/${locale}/projects`}
                         onClick={() => setShowNav(false)}
-                        className="flex items-center justify-center h-11 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 transition-colors"
+                        className="flex items-center justify-center h-11 rounded-full bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition-colors"
                     >
                         {t('startNow')}
                     </Link>

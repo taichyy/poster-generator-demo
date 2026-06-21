@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
                 onClick={() => switchLocale('en')}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                     locale === 'en'
-                        ? 'bg-emerald-400 text-zinc-950'
+                        ? 'bg-red-600 text-white'
                         : 'text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-600'
                 }`}
             >
@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
                 onClick={() => switchLocale('zh-TW')}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                     locale === 'zh-TW'
-                        ? 'bg-emerald-400 text-zinc-950'
+                        ? 'bg-red-600 text-white'
                         : 'text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-600'
                 }`}
             >

@@ -16,8 +16,8 @@ const Hero = async () => {
                 className="pointer-events-none absolute inset-0"
                 style={{
                     background: `
-                        radial-gradient(ellipse 80% 60% at 60% 0%, rgba(52,211,153,0.09) 0%, transparent 70%),
-                        radial-gradient(ellipse 50% 40% at 100% 100%, rgba(52,211,153,0.05) 0%, transparent 60%)
+                        radial-gradient(ellipse 80% 60% at 60% 0%, rgba(204,17,17,0.09) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 40% at 100% 100%, rgba(204,17,17,0.05) 0%, transparent 60%)
                     `
                 }}
             />
@@ -28,7 +28,7 @@ const Hero = async () => {
                         <h1 className="text-5xl md:text-6xl lg:text-[4rem] font-semibold tracking-tight leading-[1.08] text-white">
                             {t('title')}
                             <br />
-                            <em className="not-italic text-emerald-400">{t('subtitle')}</em>{t('subtitleEnd')}
+                            <em className="not-italic text-red-500">{t('subtitle')}</em>{t('subtitleEnd')}
                         </h1>
                         <p className="mt-6 text-lg text-zinc-400 leading-relaxed max-w-[42ch]">
                             {t('description')}
@@ -36,7 +36,7 @@ const Hero = async () => {
                         <div className="flex flex-col sm:flex-row items-start gap-3 mt-10">
                             <Link
                                 href={`/${locale}/projects`}
-                                className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 active:scale-[0.98] transition-all duration-200"
+                                className="inline-flex items-center gap-2 h-12 px-7 rounded-full bg-red-600 text-white text-sm font-semibold hover:bg-red-500 active:scale-[0.98] transition-all duration-200"
                             >
                                 {t('primaryButton')}
                                 <ArrowRight size={15} weight="bold" />
@@ -54,7 +54,7 @@ const Hero = async () => {
                         <div
                             aria-hidden="true"
                             className="absolute -inset-10 rounded-3xl opacity-30"
-                            style={{ background: 'radial-gradient(ellipse at center, rgba(52,211,153,0.2), transparent 70%)' }}
+                            style={{ background: 'radial-gradient(ellipse at center, rgba(204,17,17,0.15), transparent 70%)' }}
                         />
                         <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
                             <Image

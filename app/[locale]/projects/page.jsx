@@ -63,7 +63,7 @@ const ProjectsPage = async ({ searchParams }) => {
                 <div className="flex items-center gap-3">
                     <Avatar className="w-9 h-9 border border-zinc-200 shadow-sm">
                         <AvatarImage src="https://picsum.photos/seed/user-tanaka-avatar/80/80" />
-                        <AvatarFallback className="text-xs font-semibold bg-emerald-50 text-emerald-700">
+                        <AvatarFallback className="text-xs font-semibold bg-red-50 text-red-700">
                             {userData.user_name.charAt(0)}
                         </AvatarFallback>
                     </Avatar>

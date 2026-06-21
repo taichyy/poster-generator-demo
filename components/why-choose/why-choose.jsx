@@ -5,7 +5,7 @@ import { ShieldCheck, SlidersHorizontal, Timer } from "@phosphor-icons/react/dis
 import RevealStagger from "../reveal-stagger";
 
 const tileIcons = [Timer, ShieldCheck, SlidersHorizontal];
-const tileBgs   = ["bg-zinc-900", "bg-emerald-950/60", "bg-zinc-900"];
+const tileBgs   = ["bg-zinc-900", "bg-red-950/60", "bg-zinc-900"];
 
 const WhyChoose = async () => {
     const t = await getTranslations('whyChoose');
@@ -44,7 +44,7 @@ const WhyChoose = async () => {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent" />
                             <div className="relative z-10">
-                                <p className="text-xs font-mono text-emerald-400 tracking-widest uppercase mb-3">
+                                <p className="text-xs font-mono text-red-400 tracking-widest uppercase mb-3">
                                     {t('bentoEyebrow')}
                                 </p>
                                 <h3 className="text-2xl md:text-3xl font-semibold tracking-tight text-white leading-snug whitespace-pre-line">
@@ -60,7 +60,7 @@ const WhyChoose = async () => {
                     {tiles.map(({ Icon, title, desc, bg }, i) => (
                         <RevealStagger key={i} delay={0.15 + i * 0.07}>
                             <div className={`${bg} rounded-2xl p-7 border border-white/[0.06] flex flex-col gap-4 hover:border-white/10 transition-colors duration-200 min-h-[200px]`}>
-                                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-emerald-400/10 text-emerald-400">
+                                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-red-500/10 text-red-400">
                                     <Icon size={18} weight="duotone" />
                                 </div>
                                 <div>

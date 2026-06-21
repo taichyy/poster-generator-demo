@@ -8,7 +8,7 @@ const Toggle = ({ defaultChecked = false }) => {
     return (
         <button
             onClick={() => setOn(!on)}
-            className={`relative w-10 h-6 rounded-full transition-colors duration-200 ${on ? "bg-emerald-400" : "bg-zinc-200"}`}
+            className={`relative w-10 h-6 rounded-full transition-colors duration-200 ${on ? "bg-red-600" : "bg-zinc-200"}`}
             aria-checked={on}
             role="switch"
         >
@@ -23,7 +23,7 @@ const SelectInput = ({ options, defaultValue }) => {
         <select
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-800 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200"
         >
             {options.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -61,7 +61,7 @@ const SettingsClient = ({ labels }) => {
         general: (
             <div>
                 <SettingRow label={g.workspaceName} description={g.workspaceNameDesc}>
-                    <input defaultValue={g.workspaceNameDefault} className="h-9 px-3 w-56 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200" />
+                    <input defaultValue={g.workspaceNameDefault} className="h-9 px-3 w-56 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-800 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200" />
                 </SettingRow>
                 <SettingRow label={g.exportFormat} description={g.exportFormatDesc}>
                     <SelectInput defaultValue="png" options={Object.entries(g.exportFormatOptions).map(([value, label]) => ({ value, label }))} />
@@ -152,7 +152,7 @@ const SettingsClient = ({ labels }) => {
             </div>
 
             {saved && (
-                <div className="mb-4 px-4 py-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-sm text-emerald-700 font-medium w-fit">
+                <div className="mb-4 px-4 py-2.5 rounded-lg bg-red-50 border border-red-200 text-sm text-red-700 font-medium w-fit">
                     {labels.saved}
                 </div>
             )}

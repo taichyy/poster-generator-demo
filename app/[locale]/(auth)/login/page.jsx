@@ -49,7 +49,7 @@ const LoginPage = async () => {
                                 </label>
                                 <Link
                                     href={`/${locale}/forgot-password`}
-                                    className="text-xs text-emerald-600 hover:text-emerald-800 transition-colors"
+                                    className="text-xs text-red-600 hover:text-red-800 transition-colors"
                                 >
                                     {l.forgotPassword}
                                 </Link>

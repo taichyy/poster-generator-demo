@@ -34,7 +34,7 @@ const ContactClient = ({ labels }) => {
                 <div className="bg-white rounded-xl border border-zinc-100 shadow-sm px-6 py-6">
                     {submitted ? (
                         <div className="flex flex-col items-center justify-center py-12 text-center">
-                            <CheckCircle size={40} weight="fill" className="text-emerald-400 mb-3" />
+                            <CheckCircle size={40} weight="fill" className="text-red-500 mb-3" />
                             <h2 className="text-base font-semibold text-zinc-950 mb-1">{labels.successTitle}</h2>
                             <p className="text-sm text-zinc-500">{labels.successDesc}</p>
                             <button
@@ -56,7 +56,7 @@ const ContactClient = ({ labels }) => {
                                             value={form.name}
                                             onChange={(e) => setForm({ ...form, name: e.target.value })}
                                             placeholder={labels.placeholderName}
-                                            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                                            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-1.5">
@@ -67,7 +67,7 @@ const ContactClient = ({ labels }) => {
                                             value={form.email}
                                             onChange={(e) => setForm({ ...form, email: e.target.value })}
                                             placeholder="name@company.com"
-                                            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                                            className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200"
                                         />
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@ const ContactClient = ({ labels }) => {
                                         value={form.subject}
                                         onChange={(e) => setForm({ ...form, subject: e.target.value })}
                                         placeholder={labels.placeholderSubject}
-                                        className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200"
+                                        className="h-9 px-3 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-1.5">
@@ -89,7 +89,7 @@ const ContactClient = ({ labels }) => {
                                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                                         placeholder={labels.placeholderMessage}
                                         rows={5}
-                                        className="px-3 py-2.5 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200 resize-none"
+                                        className="px-3 py-2.5 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200 resize-none"
                                     />
                                 </div>
                                 <button

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link";
+import Image from "next/image";
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
@@ -8,14 +9,6 @@ import { List } from "@phosphor-icons/react";
 import { usePathname } from "next/navigation";
 
 import LanguageSwitcher from '@/components/language-switcher';
-
-const LogoMark = () => (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="9" height="14" rx="2" fill="#34D399" />
-        <rect x="13" y="2" width="9" height="9" rx="2" fill="#34D399" opacity="0.6" />
-        <rect x="13" y="13" width="9" height="9" rx="2" fill="#34D399" opacity="0.35" />
-    </svg>
-);
 
 const NavDesk = ({ navLinks, setShowNav, locale }) => {
     const pathname = usePathname();
@@ -40,10 +33,7 @@ const NavDesk = ({ navLinks, setShowNav, locale }) => {
                 <div className="grid grid-cols-2 md:grid-cols-3 h-full max-w-7xl mx-auto px-6">
                     {/* Logo */}
                     <Link href={`/${locale}`} className="flex items-center gap-2.5 group" aria-label="Poster Generator">
-                        <LogoMark />
-                        <span className="text-sm font-semibold text-white tracking-tight">
-                            heytai
-                        </span>
+                        <Image src="/logo-main.png" alt="一番賞海報生成器" width={120} height={36} className="h-9 w-auto object-contain" priority />
                     </Link>
 
                     {/* Nav links */}
@@ -58,7 +48,7 @@ const NavDesk = ({ navLinks, setShowNav, locale }) => {
                                 >
                                     {link.label}
                                     {isActive && (
-                                        <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-emerald-400 rounded-full" />
+                                        <span className="absolute -bottom-0.5 left-0 right-0 h-px bg-red-500 rounded-full" />
                                     )}
                                 </Link>
                             );
@@ -69,7 +59,7 @@ const NavDesk = ({ navLinks, setShowNav, locale }) => {
                     <div className="flex items-center justify-end gap-3">
                         <Link
                             href={`/${locale}/projects`}
-                            className="hidden md:inline-flex items-center h-9 px-5 rounded-full bg-emerald-400 text-zinc-950 text-sm font-semibold hover:bg-emerald-300 active:scale-[0.98] transition-all duration-200"
+                            className="hidden md:inline-flex items-center h-9 px-5 rounded-full bg-red-600 text-white text-sm font-semibold hover:bg-red-500 active:scale-[0.98] transition-all duration-200"
                         >
                             {t('startNow')}
                         </Link>

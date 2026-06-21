@@ -18,7 +18,7 @@ const AnalyticsFeature = async () => {
 
                     <RevealStagger delay={0}>
                         <div className="relative">
-                            <div className="absolute -inset-3 bg-emerald-50 rounded-3xl opacity-60 blur-2xl" />
+                            <div className="absolute -inset-3 bg-red-50 rounded-3xl opacity-60 blur-2xl" />
                             <div className="relative rounded-2xl overflow-hidden border border-zinc-100 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.1)]">
                                 <Image
                                     src="https://picsum.photos/seed/design-tool-editor-canvas/700/520"
@@ -42,8 +42,8 @@ const AnalyticsFeature = async () => {
                             <ul className="flex flex-col gap-3.5 mb-10">
                                 {checkpoints.map((item, i) => (
                                     <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 font-medium">
-                                        <span className="mt-0.5 w-5 h-5 rounded-full bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
-                                            <Check size={11} weight="bold" className="text-emerald-600" />
+                                        <span className="mt-0.5 w-5 h-5 rounded-full bg-red-50 border border-red-100 flex items-center justify-center shrink-0">
+                                            <Check size={11} weight="bold" className="text-red-600" />
                                         </span>
                                         {item}
                                     </li>

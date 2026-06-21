@@ -1,13 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 
 // Reusable left brand panel for all auth pages
-const LogoMark = () => (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="9" height="14" rx="2" fill="#34D399" />
-        <rect x="13" y="2" width="9" height="9" rx="2" fill="#34D399" opacity="0.6" />
-        <rect x="13" y="13" width="9" height="9" rx="2" fill="#34D399" opacity="0.35" />
-    </svg>
-);
 
 const AuthBrandPanel = ({ locale, logoLabel, tagline }) => {
     return (
@@ -18,12 +12,11 @@ const AuthBrandPanel = ({ locale, logoLabel, tagline }) => {
                 className="pointer-events-none absolute inset-0"
                 style={{
                     background:
-                        "radial-gradient(ellipse 70% 50% at 15% 80%, rgba(52,211,153,0.08) 0%, transparent 60%)",
+                        "radial-gradient(ellipse 70% 50% at 15% 80%, rgba(204,17,17,0.1) 0%, transparent 60%)",
                 }}
             />
-            <Link href={`/${locale}`} className="flex items-center gap-2.5 relative z-10 w-fit">
-                <LogoMark />
-                <span className="text-sm font-semibold text-white">{logoLabel}</span>
+            <Link href={`/${locale}`} className="relative z-10 w-fit">
+                <Image src="/logo-main.png" alt="一番賞海報生成器" width={140} height={42} className="h-10 w-auto object-contain" />
             </Link>
             <div className="relative z-10">
                 <p className="text-[1.55rem] font-semibold text-white leading-[1.45] tracking-tight max-w-[26ch]">
@@ -37,14 +30,13 @@ const AuthBrandPanel = ({ locale, logoLabel, tagline }) => {
 const AuthMobileLogo = ({ locale, logoLabel }) => {
     return (
         <Link href={`/${locale}`} className="flex items-center gap-2.5 mb-10 lg:hidden">
-            <LogoMark />
-            <span className="text-sm font-semibold text-zinc-950">{logoLabel}</span>
+            <Image src="/logo.png" alt="一番賞海報生成器" width={120} height={36} className="h-9 w-auto object-contain" />
         </Link>
     );
 }
 
 // Shared input style
 export const inputCls =
-    "h-10 px-3.5 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition-all duration-200 w-full";
+    "h-10 px-3.5 rounded-lg border border-zinc-200 bg-white text-sm text-zinc-900 placeholder:text-zinc-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all duration-200 w-full";
 
 export { AuthBrandPanel, AuthMobileLogo };
