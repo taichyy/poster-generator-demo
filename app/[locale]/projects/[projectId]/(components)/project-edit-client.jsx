@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ArrowLeftCircle, Pencil } from "lucide-react";
 
@@ -31,7 +30,7 @@ const ProjectEditClient = ({ labels, locale }) => {
                 <ResizablePanel defaultSize={20} className="hidden md:flex min-w-[200px] max-w-[20%] pt-2 justify-center">
                     <div>
                         <Link href={`/${locale}/projects`} aria-label={labels.backToProjects}>
-                            <ArrowLeftCircle className="ml-4 mb-2" size={36} />
+                            <ArrowLeftCircle className="ml-4 mb-2" size={24} />
                         </Link>
 
                         {/* Project ID sidebar */}
@@ -44,11 +43,9 @@ const ProjectEditClient = ({ labels, locale }) => {
 
                         <FlexCard title={labels.bgTitle} desc={labels.bgDesc}>
                             <div className="relative" onClick={() => setOpen(true)}>
-                                <Image
+                                <img
                                     src={`/posterAssets/images/backgrounds/${bgc}.png`}
                                     alt={labels.bgAlt}
-                                    width={100}
-                                    height={50}
                                     className="w-full h-auto aspect-video"
                                 />
                                 <div className=" cursor-pointer absolute w-full h-full flex items-center justify-center inset-0 bg-black/40 opacity-0 hover:opacity-40 duration-150">

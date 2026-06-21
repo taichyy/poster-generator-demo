@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import { Circle } from "fabric";
 import { useEffect, useState } from "react";
 import { Export } from "@phosphor-icons/react";
@@ -59,10 +58,9 @@ const NewProjectClient = ({ labels }) => {
                                                         : "ring-1 ring-zinc-200 hover:ring-zinc-400"
                                                 }`}
                                             >
-                                                <Image
+                                                <img
                                                     src={src}
                                                     alt={`${labels.backgroundAlt} ${i + 1}`}
-                                                    fill
                                                     className="object-cover"
                                                 />
                                             </button>

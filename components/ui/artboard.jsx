@@ -1,16 +1,15 @@
 "use client"
-import React, { useEffect } from "react";
-import Image from "next/image";
-import { ArrowLeftCircle, ArrowRightCircle, Expand, Shrink } from "lucide-react";
+
 import { useState } from "react";
 import localFont from 'next/font/local'
+import React, { useEffect } from "react";
+import { ArrowLeftCircle, ArrowRightCircle, Expand, Shrink } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { clipTemplate, objectGenerator, posterBObj, posterCObj, posterDObj } from "@/lib/templates";
-import { templateSelector, findLowestY, addAttributes, multiply, add, chineseNum, dataTotal } from "@/lib/functions";
-import { posterBSettings, posterCSettings, posterDSettings } from "@/lib/posterSettings";
-import SampleAdder from "../sample-adder";
 import ObjAdjuster from "../obj-adjuster";
+import { posterBSettings, posterCSettings, posterDSettings } from "@/lib/posterSettings";
+import { clipTemplate, objectGenerator, posterBObj, posterCObj, posterDObj } from "@/lib/templates";
+import { templateSelector, findLowestY, addAttributes, multiply, add, dataTotal } from "@/lib/functions";
 
 const fontHira = localFont({
     src: '/fonts/HiraKakuStd-W8.otf',
@@ -570,13 +569,11 @@ const Artboard = ({wpx, hpx, data, scale}) => {
                                         }}
                                     />
                                 ) : item.type == "img" ? (
-                                    <Image
+                                    <img
                                         onMouseDown={(e) => handleMouseDown(e, item?.id, item?.alt)}
                                         onClick={()=>handleClick(item?.id)}
                                         src={item?.link}
                                         alt={item?.alt}
-                                        width={200}
-                                        height={200}
                                         className={cn(
                                             " pointer-events-auto absolute flex items-center justify-center box-border", 
                                             item?.className

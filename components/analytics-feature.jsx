@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { getLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
 import { Check } from "@phosphor-icons/react/dist/ssr";
@@ -20,11 +19,9 @@ const AnalyticsFeature = async () => {
                         <div className="relative">
                             <div className="absolute -inset-3 bg-red-50 rounded-3xl opacity-60 blur-2xl" />
                             <div className="relative rounded-2xl overflow-hidden border border-zinc-100 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.1)]">
-                                <Image
+                                <img
                                     src="/details.png"
                                     alt="poster editor interface"
-                                    width={700}
-                                    height={520}
                                     className="w-full h-auto object-cover"
                                 />
                             </div>

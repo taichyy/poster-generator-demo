@@ -1,13 +1,9 @@
-import Image from 'next/image'
-
 const WhyChooseCard = ({ image, title, desc, linkText }) => {
     return (
         <div>
-            <Image
+            <img
                 src={image}
                 alt={title}
-                width={80}
-                height={80}
                 className="object-contain mx-auto"
             />
             <h1 className="text-center text-lg mt-5 mb-5 font-semibold text-gray-800 capitalize ">

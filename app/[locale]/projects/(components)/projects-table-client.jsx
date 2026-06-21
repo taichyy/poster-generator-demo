@@ -67,11 +67,11 @@ function buildColumns(labels, locale) {
                                 {labels.copyName}
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>
-                                <Link href={`/${locale}/projects/${data.project_id}`} className="w-full">
+                            <Link href={`/${locale}/projects/${data.project_id}`} className="w-full">
+                                <DropdownMenuItem>
                                     {labels.editPoster}
-                                </Link>
-                            </DropdownMenuItem>
+                                </DropdownMenuItem>
+                            </Link>
                         </DropdownMenuContent>
                     </DropdownMenu>
                 );

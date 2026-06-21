@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import { useState } from "react";
 import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
 
@@ -178,11 +177,9 @@ const SampleAdder = ({artboard, data, artboardItems, setArtboardItems}) => {
                             <CarouselContent>
                                 {sampleImages.map( (img) => (
                                     <CarouselItem key={img} className=" group aspect-video flex items-center basis-1/2 relative">
-                                        <Image
+                                        <img
                                             src={sampleImagesRoute+img}
                                             alt={`獎項示意圖 - ${img}`}
-                                            width={200}
-                                            height={150}
                                             className=" w-full h-auto"
                                             onClick={()=>setImgSelect(img)}
                                         />
@@ -213,10 +210,8 @@ const SampleAdder = ({artboard, data, artboardItems, setArtboardItems}) => {
                 { fullView ? (
                     <div className="absolute top-0 left-0 w-full h-full bg-white z-50">
                         <XCircle className="ml-auto mt-2 mr-2 cursor-pointer" onClick={()=>setFullView("")} />
-                        <Image
+                        <img
                             src={fullView}
-                            width={500}
-                            height={300}
                             alt="全螢幕預覽之示意圖片"
                             className=" w-[80%] mx-auto h-auto"
                         />

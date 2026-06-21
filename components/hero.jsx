@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, getLocale } from 'next-intl/server';
 
@@ -57,13 +57,10 @@ const Hero = async () => {
                             style={{ background: 'radial-gradient(ellipse at center, rgba(204,17,17,0.15), transparent 70%)' }}
                         />
                         <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
-                            <Image
+                            <img 
                                 src="/poster-demo.png"
                                 alt="Poster generation tool interface preview"
-                                width={800}
-                                height={560}
                                 className="w-full h-auto object-cover"
-                                priority
                             />
                             <div
                                 aria-hidden="true"

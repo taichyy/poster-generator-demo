@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { X } from "@phosphor-icons/react/dist/ssr";
 
