@@ -1,11 +1,13 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Headset, EnvelopeSimple, ChatCircle, BookOpen, ArrowRight, CheckCircle } from "@phosphor-icons/react";
 
 const quickLinkIcons = [BookOpen, ChatCircle, EnvelopeSimple];
 
-const ContactClient = ({ labels }) => {
+const ContactClient = (props) => {
+    const { labels } = props;
+
     const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
     const [submitted, setSubmitted] = useState(false);
     const [openFaq, setOpenFaq] = useState(null);

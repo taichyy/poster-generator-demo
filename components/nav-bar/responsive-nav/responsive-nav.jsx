@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
-import NavDesk from './nav-desk';
-import NavMobile from './nav-mobile';
+import NavDesk from "./nav-desk";
+import NavMobile from "./nav-mobile";
 
 const NavResponsive = () => {
     const [showNav, setShowNav] = useState(false);

@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { useLocale } from 'next-intl';
-import { locales } from '@/i18n/config';
-import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
+
+import { locales } from "@/i18n/config";
 
 const LanguageSwitcher = () => {
     const locale = useLocale();

@@ -1,10 +1,12 @@
-"use client";
+"use client"
 
 import * as fabric from "fabric";
 import { Square } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const FabricCanvas = ({ addElements, background }) => {
+const FabricCanvas = (props) => {
+    const { addElements, background } = props;
+
     const canvasRef = useRef(null);
     const [canvas, setCanvas] = useState(null);
 

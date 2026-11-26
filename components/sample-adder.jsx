@@ -5,28 +5,28 @@ import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
 
 import {
     Carousel,
-    CarouselContent,
     CarouselItem,
     CarouselNext,
+    CarouselContent,
     CarouselPrevious,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 import {
     AlertDialog,
+    AlertDialogTitle,
     AlertDialogAction,
     AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
     AlertDialogFooter,
     AlertDialogHeader,
-    AlertDialogTitle,
+    AlertDialogContent,
     AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Badge } from "@/components/ui/badge"
+    AlertDialogDescription,
+} from "@/components/ui/alert-dialog";
+import { Badge } from "@/components/ui/badge";
 import { addAttributes } from "@/lib/functions";
-  
 
-const SampleAdder = ({artboard, data, artboardItems, setArtboardItems}) => {
-    
+const SampleAdder = (props) => {
+    const { artboard, data, artboardItems, setArtboardItems } = props;
+
     // Prizes to add
     let prizes = []
     for(let prize of data.prizes){

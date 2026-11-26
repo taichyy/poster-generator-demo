@@ -6,13 +6,15 @@ import { Export } from "@phosphor-icons/react";
 
 import {
     Accordion,
-    AccordionContent,
     AccordionItem,
+    AccordionContent,
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import FabricCanvas from "@/components/fabric-canvas";
 
-const NewProjectClient = ({ labels }) => {
+const NewProjectClient = (props) => {
+    const { labels } = props;
+
     const [addElements, setAddElements] = useState([]);
     const [background, setBackground] = useState(null);
 

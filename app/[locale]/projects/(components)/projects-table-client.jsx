@@ -8,17 +8,17 @@ import { MoreHorizontal } from "lucide-react";
 
 import {
     DropdownMenu,
-    DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator,
+    DropdownMenuContent,
     DropdownMenuTrigger,
+    DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { DataTable } from "./data-table";
 import { Button } from "@/components/ui/button";
 
 // Columns are built inside the component so they can access translated labels via closure
-function buildColumns(labels, locale) {
+const buildColumns = (labels, locale) => {
     return [
         {
             accessorKey: "project_id",
@@ -80,7 +80,9 @@ function buildColumns(labels, locale) {
     ];
 }
 
-const ProjectsTableClient = ({ data, page, locale, labels }) => {
+const ProjectsTableClient = (props) => {
+    const { data, page, locale, labels } = props;
+
     const columns = useMemo(() => buildColumns(labels, locale), [labels, locale]);
 
     return (

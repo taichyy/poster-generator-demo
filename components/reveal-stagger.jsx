@@ -7,7 +7,9 @@ import { motion, useReducedMotion } from "motion/react";
  * Used for section headers and bento tiles.
  * Isolated client leaf component — Section 3.A INTERACTIVITY ISOLATION.
  */
-const RevealStagger = ({ children, delay = 0, className = "" }) => {
+const RevealStagger = (props) => {
+    const { children, delay = 0, className = "" } = props;
+
     const reduce = useReducedMotion();
 
     return (

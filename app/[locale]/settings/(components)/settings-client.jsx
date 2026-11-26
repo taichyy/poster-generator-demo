@@ -1,9 +1,11 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Gear, Bell, Shield, Palette, Globe, FloppyDisk } from "@phosphor-icons/react";
 
-const Toggle = ({ defaultChecked = false }) => {
+const Toggle = (props) => {
+    const { defaultChecked = false } = props;
+
     const [on, setOn] = useState(defaultChecked);
     return (
         <button
@@ -17,7 +19,9 @@ const Toggle = ({ defaultChecked = false }) => {
     );
 };
 
-const SelectInput = ({ options, defaultValue }) => {
+const SelectInput = (props) => {
+    const { options, defaultValue } = props;
+
     const [value, setValue] = useState(defaultValue);
     return (
         <select
@@ -32,19 +36,25 @@ const SelectInput = ({ options, defaultValue }) => {
     );
 };
 
-const SettingRow = ({ label, description, children }) => (
-    <div className="flex items-center justify-between py-4 border-b border-zinc-100 last:border-0">
-        <div>
-            <p className="text-sm font-medium text-zinc-800">{label}</p>
-            {description && <p className="text-xs text-zinc-400 mt-0.5">{description}</p>}
+const SettingRow = (props) => {
+    const { label, description, children } = props;
+
+    return (
+        <div className="flex items-center justify-between py-4 border-b border-zinc-100 last:border-0">
+            <div>
+                <p className="text-sm font-medium text-zinc-800">{label}</p>
+                {description && <p className="text-xs text-zinc-400 mt-0.5">{description}</p>}
+            </div>
+            <div className="ml-8 shrink-0">{children}</div>
         </div>
-        <div className="ml-8 shrink-0">{children}</div>
-    </div>
-);
+    );
+};
 
 const tabIcons = { general: Gear, notifications: Bell, privacy: Shield, appearance: Palette, language: Globe };
 
-const SettingsClient = ({ labels }) => {
+const SettingsClient = (props) => {
+    const { labels } = props;
+
     const [activeTab, setActiveTab] = useState("general");
     const [saved, setSaved] = useState(false);
     const [theme, setTheme] = useState("light");

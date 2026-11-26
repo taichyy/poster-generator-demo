@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
-export function useI18n() {
+export const useI18n = () => {
     return useTranslations();
-}
+};

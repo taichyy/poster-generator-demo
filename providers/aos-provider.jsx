@@ -1,11 +1,12 @@
 "use client"
 
-import AOS from 'aos'
-import "aos/dist/aos.css"
-import React, { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 
-const AOSProvider = ({children}) => {
-    
+const AOSProvider = (props) => {
+    const { children } = props;
+
     useEffect(() => {
         const initAOS = async () => {
             await import("aos")
@@ -27,4 +28,4 @@ const AOSProvider = ({children}) => {
     )
 }
 
-export default AOSProvider
+export default AOSProvider;

@@ -1,8 +1,10 @@
-"use client";
+"use client"
 
-import { useLocale } from 'next-intl';
+import { useLocale } from "next-intl";
 
-const I18nProvider = ({ children }) => {
+const I18nProvider = (props) => {
+    const { children } = props;
+
     const locale = useLocale();
 
     return (

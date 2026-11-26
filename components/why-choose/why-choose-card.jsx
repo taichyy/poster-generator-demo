@@ -1,4 +1,6 @@
-const WhyChooseCard = ({ image, title, desc, linkText }) => {
+const WhyChooseCard = (props) => {
+    const { image, title, desc, linkText } = props;
+
     return (
         <div>
             <img
@@ -19,4 +21,4 @@ const WhyChooseCard = ({ image, title, desc, linkText }) => {
     )
 }
 
-export default WhyChooseCard
+export default WhyChooseCard;

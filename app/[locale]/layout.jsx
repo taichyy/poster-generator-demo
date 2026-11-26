@@ -1,11 +1,11 @@
-import { locales } from "@/i18n/config";
-import { Toaster } from 'react-hot-toast';
-import { getMessages } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
+import { Toaster } from "react-hot-toast";
+import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "../globals.css";
-import { TooltipProvider } from '@/components/ui/tooltip';
+import { locales } from "@/i18n/config";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geist = Geist({
     subsets: ["latin"],
@@ -22,12 +22,14 @@ export const metadata = {
     description: "Import materials, select templates, adjust online, and generate print-quality posters.",
 };
 
-export function generateStaticParams() {
+export const generateStaticParams = () => {
     return locales.map((locale) => ({ locale }));
-}
+};
 
-const LocaleLayout = async ({ children, params }) => {
-    const { locale } = await params;
+const LocaleLayout = async (props) => {
+    const { children } = props;
+    const { locale } = await props.params;
+
     const messages = await getMessages();
 
     return (

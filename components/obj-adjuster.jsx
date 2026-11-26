@@ -5,26 +5,31 @@ import { Hand, ArrowBigRight, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Sha
 
 import {
     Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
     SheetTitle,
+    SheetHeader,
+    SheetContent,
     SheetTrigger,
-} from "@/components/ui/sheet"
+    SheetDescription,
+} from "@/components/ui/sheet";
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
-import ObjAdjusterInput from "./ui/obj-adjuster-input";
 import { useI18n } from "@/hooks/use-i18n";
+import ObjAdjusterInput from "./ui/obj-adjuster-input";
 
 // ScrollArea shimmed with a plain div
-const ScrollArea = ({ className, children }) => (
-    <div className={`overflow-y-auto ${className ?? ""}`}>{children}</div>
-);
+const ScrollArea = (props) => {
+    const { className, children } = props;
 
-const ObjAdjuster = ({
-    artboard, data, artboardItems, setArtboardItems,
-    height, setHeight, width, setWidth
-}) => {
+    return (
+        <div className={`overflow-y-auto ${className ?? ""}`}>{children}</div>
+    );
+};
+
+const ObjAdjuster = (props) => {
+    const {
+        artboard, data, artboardItems, setArtboardItems,
+        height, setHeight, width, setWidth
+    } = props;
 
     const [isOpen, setIsOpen] = useState(false);
     const scrollAreaRef = useRef(null);

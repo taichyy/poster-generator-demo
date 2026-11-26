@@ -1,4 +1,4 @@
-import { FaBook, FaCog, FaDesktop, FaHeadset, FaInfinity, FaLaptop, FaLayerGroup, FaMobileAlt, FaShieldAlt } from 'react-icons/fa'
+import { FaBook, FaCog, FaDesktop, FaHeadset, FaInfinity, FaLaptop, FaLayerGroup, FaMobileAlt, FaShieldAlt } from "react-icons/fa";
 
 const Feature = () => {
     const featureData = {
@@ -72,4 +72,4 @@ const Feature = () => {
     )
 }
 
-export default Feature
+export default Feature;

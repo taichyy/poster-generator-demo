@@ -2,32 +2,34 @@
 
 import {
     flexRender,
-    getCoreRowModel,
-    getFilteredRowModel,
-    getSortedRowModel,
     useReactTable,
-} from "@tanstack/react-table"
-import * as React from "react"
+    getCoreRowModel,
+    getSortedRowModel,
+    getFilteredRowModel,
+} from "@tanstack/react-table";
+import * as React from "react";
 
 import {
     Table,
+    TableRow,
     TableBody,
     TableCell,
     TableHead,
     TableHeader,
-    TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 import {
     DropdownMenu,
-    DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { PaginationButtons } from "@/components/pagination-buttons"
+    DropdownMenuCheckboxItem,
+} from "@/components/ui/dropdown-menu";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { PaginationButtons } from "@/components/pagination-buttons";
 
-export const DataTable = ({ columns, data, page, total, labels }) => {
+export const DataTable = (props) => {
+    const { columns, data, page, total, labels } = props;
+
     const [sorting, setSorting] = React.useState([])
     const [columnFilters, setColumnFilters] = React.useState([])
     const [columnVisibility, setColumnVisibility] = React.useState({})
@@ -130,4 +132,4 @@ export const DataTable = ({ columns, data, page, total, labels }) => {
             </div>
         </div>
     )
-}
+};

@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { ArrowLeftCircle, Pencil } from "lucide-react";
 
 import {
-    ResizableHandle,
     ResizablePanel,
+    ResizableHandle,
     ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { detailData } from "@/lib/data";
@@ -15,7 +15,9 @@ import FlexCard from "@/components/ui/flex-card";
 import ImgPicker from "@/components/ui/img-picker";
 import BasicTextBox from "@/components/ui/basic-text-box";
 
-const ProjectEditClient = ({ labels, locale }) => {
+const ProjectEditClient = (props) => {
+    const { labels, locale } = props;
+
     const [open, setOpen] = useState(false);
     const [data, setData] = useState(detailData);
     const [bgc, setBgc] = useState(data.bgc);

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { Ellipsis } from 'lucide-react';
+import { Ellipsis } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
 import {
@@ -10,33 +10,34 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationContent,
-    PaginationPrevious
+    PaginationPrevious,
 } from "./ui/pagination";
 import { cn } from "@/lib/utils";
 import { navigate } from "@/lib/actions";
 import { useI18n } from "@/hooks/use-i18n";
 
-export const PaginationButtons = ({
-    // Pass "params" (Append page in search params) | "hook" (Manage using setPage()).
-    type = "hook",
-    // Current page, can be from anywhere.
-    page,
-    // Total data size.
-    total = 1,
-    // (optional) Page size.
-    count = 25,
-    // (optional) If would like to append the params with another name rather than "page".
-    paramsKey = "page",
-    // (optional) Only use with type hook.
-    setPage,
-    // (optional)
-    className,
-}) => {
+export const PaginationButtons = (props) => {
+    const {
+        // Pass "params" (Append page in search params) | "hook" (Manage using setPage()).
+        type = "hook",
+        // Total data size.
+        total = 1,
+        // (optional) Page size.
+        count = 25,
+        // (optional) If would like to append the params with another name rather than "page".
+        paramsKey = "page",
+        // (optional) Only use with type hook.
+        setPage,
+        // (optional)
+        className,
+    } = props;
+
     const router = useRouter();
     const pathname = usePathname()
     const t = useI18n();
 
-    page = parseInt(page);
+    // Current page, can be from anywhere.
+    const page = parseInt(props.page);
     const totalPage = Math.ceil(total / count);
 
     const updatePage = (num) => {
@@ -54,10 +55,9 @@ export const PaginationButtons = ({
         }
     };
 
-    const PageBtn = ({
-        num,
-        click = true
-    }) => {
+    const PageBtn = (props) => {
+        const { num, click = true } = props;
+
         return (
             <PaginationItem>
                 <PaginationLink
@@ -79,7 +79,9 @@ export const PaginationButtons = ({
         );
     };
 
-    const SwitchWrapper = ({ children, notEqualTo }) => {
+    const SwitchWrapper = (props) => {
+        const { children, notEqualTo } = props;
+
         const [btnClicked, setBtnClicked] = useState(false);
 
         return (

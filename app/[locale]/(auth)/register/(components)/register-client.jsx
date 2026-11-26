@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import { useState } from "react";
@@ -6,7 +6,9 @@ import { ArrowRight, CheckCircle } from "@phosphor-icons/react";
 
 import { AuthBrandPanel, AuthMobileLogo, inputCls } from "@/components/auth-panel";
 
-const RegisterClient = ({ labels: l }) => {
+const RegisterClient = (props) => {
+    const { labels: l } = props;
+
     const [submitted, setSubmitted] = useState(false);
 
     if (submitted) {

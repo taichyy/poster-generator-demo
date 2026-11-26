@@ -8,9 +8,11 @@ import { useTranslations } from "next-intl";
 import { List } from "@phosphor-icons/react";
 import { usePathname } from "next/navigation";
 
-import LanguageSwitcher from '@/components/language-switcher';
+import LanguageSwitcher from "@/components/language-switcher";
 
-const NavDesk = ({ navLinks, setShowNav, locale }) => {
+const NavDesk = (props) => {
+    const { navLinks, setShowNav, locale } = props;
+
     const pathname = usePathname();
     const [closed, setClosed] = useState(false);
     const t = useTranslations('nav');

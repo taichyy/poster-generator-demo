@@ -2,7 +2,9 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
-const HeroMotion = ({ children }) => {
+const HeroMotion = (props) => {
+    const { children } = props;
+
     const reduce = useReducedMotion();
 
     const container = {

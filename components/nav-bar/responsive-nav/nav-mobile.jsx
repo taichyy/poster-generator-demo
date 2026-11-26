@@ -1,8 +1,10 @@
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { X } from "@phosphor-icons/react/dist/ssr";
 
-const NavMobile = ({ showNav, navLinks, setShowNav, locale }) => {
+const NavMobile = (props) => {
+    const { showNav, navLinks, setShowNav, locale } = props;
+
     const t = useTranslations('nav');
     
     return (
