@@ -1,4 +1,6 @@
-const HomeLayout = ({ children }) => {
+const HomeLayout = (props) => {
+    const { children } = props;
+
     return children;
 };
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { useMemo } from "react";
@@ -6,6 +6,8 @@ import toast from "react-hot-toast";
 import { formatDate } from "date-fns";
 import { MoreHorizontal } from "lucide-react";
 
+import { DataTable } from "./data-table";
+import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,11 +16,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { DataTable } from "./data-table";
-import { Button } from "@/components/ui/button";
 
 // Columns are built inside the component so they can access translated labels via closure
-function buildColumns(labels, locale) {
+const buildColumns = (labels, locale) => {
     return [
         {
             accessorKey: "project_id",
@@ -78,9 +78,11 @@ function buildColumns(labels, locale) {
             },
         },
     ];
-}
+};
 
-const ProjectsTableClient = ({ data, page, locale, labels }) => {
+const ProjectsTableClient = (props) => {
+    const { data, page, locale, labels } = props;
+
     const columns = useMemo(() => buildColumns(labels, locale), [labels, locale]);
 
     return (
@@ -92,6 +94,6 @@ const ProjectsTableClient = ({ data, page, locale, labels }) => {
             labels={labels}
         />
     );
-}
+};
 
 export default ProjectsTableClient;

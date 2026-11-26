@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -10,7 +10,9 @@ import { usePathname } from "next/navigation";
 
 import LanguageSwitcher from '@/components/language-switcher';
 
-const NavDesk = ({ navLinks, setShowNav, locale }) => {
+const NavDesk = (props) => {
+    const { navLinks, setShowNav, locale } = props;
+
     const pathname = usePathname();
     const [closed, setClosed] = useState(false);
     const t = useTranslations('nav');

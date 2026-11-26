@@ -23,6 +23,6 @@ const ProjectEditPage = async () => {
     };
 
     return <ProjectEditClient labels={labels} locale={locale} />;
-}
+};
 
 export default ProjectEditPage;

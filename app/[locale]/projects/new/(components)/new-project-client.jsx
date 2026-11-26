@@ -1,18 +1,20 @@
-"use client"
+"use client";
 
 import { Circle } from "fabric";
 import { useEffect, useState } from "react";
 import { Export } from "@phosphor-icons/react";
 
+import FabricCanvas from "@/components/fabric-canvas";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
-import FabricCanvas from "@/components/fabric-canvas";
 
-const NewProjectClient = ({ labels }) => {
+const NewProjectClient = (props) => {
+    const { labels } = props;
+
     const [addElements, setAddElements] = useState([]);
     const [background, setBackground] = useState(null);
 
@@ -90,6 +92,6 @@ const NewProjectClient = ({ labels }) => {
             </div>
         </main>
     );
-}
+};
 
 export default NewProjectClient;

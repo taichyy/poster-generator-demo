@@ -14,7 +14,9 @@ const formatDate = (dateStr) => {
     return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
 };
 
-const BillingClient = ({ labels: l }) => {
+const BillingClient = (props) => {
+    const { labels: l } = props;
+
     return (
         <main className="flex flex-col px-6 py-8 w-full min-h-screen bg-zinc-50/40">
             <div className="flex items-center gap-3 mb-8">
@@ -165,6 +167,6 @@ const BillingClient = ({ labels: l }) => {
             </div>
         </main>
     );
-}
+};
 
 export default BillingClient;

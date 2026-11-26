@@ -27,6 +27,6 @@ const ContactPage = async () => {
     };
 
     return <ContactClient labels={labels} />;
-}
+};
 
 export default ContactPage;

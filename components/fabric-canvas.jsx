@@ -4,7 +4,9 @@ import * as fabric from "fabric";
 import { Square } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const FabricCanvas = ({ addElements, background }) => {
+const FabricCanvas = (props) => {
+    const { addElements, background } = props;
+
     const canvasRef = useRef(null);
     const [canvas, setCanvas] = useState(null);
 
@@ -13,7 +15,7 @@ const FabricCanvas = ({ addElements, background }) => {
             const initCanvas = new fabric.Canvas(canvasRef.current, {
                 width: 500,
                 height: 500,
-            })
+            });
 
             initCanvas.backgroundColor = "#ccc";
             initCanvas.renderAll();
@@ -22,9 +24,9 @@ const FabricCanvas = ({ addElements, background }) => {
 
             return () => {
                 initCanvas.dispose();
-            }
+            };
         }
-    }, [])
+    }, []);
     
     const addRectangle = () => {
         if (canvas) {
@@ -38,7 +40,7 @@ const FabricCanvas = ({ addElements, background }) => {
             
             canvas.add(rect);
         }
-    }
+    };
 
     return (
         <div>

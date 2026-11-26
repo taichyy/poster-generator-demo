@@ -34,6 +34,6 @@ const AccountPage = async () => {
         deactivateAccount:      t('deactivateAccount'),
     };
     return <AccountClient labels={labels} />;
-}
+};
 
 export default AccountPage;

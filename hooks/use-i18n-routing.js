@@ -1,6 +1,6 @@
 import { useLocale } from 'next-intl';
 
-export function useI18nRouting() {
+export const useI18nRouting = () => {
     const locale = useLocale();
 
     const getLocalizedPath = (path) => {
@@ -16,4 +16,4 @@ export function useI18nRouting() {
     };
 
     return { locale, getLocalizedPath };
-}
+};

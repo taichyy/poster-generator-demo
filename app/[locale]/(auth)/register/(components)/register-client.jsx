@@ -6,7 +6,9 @@ import { ArrowRight, CheckCircle } from "@phosphor-icons/react";
 
 import { AuthBrandPanel, AuthMobileLogo, inputCls } from "@/components/auth-panel";
 
-const RegisterClient = ({ labels: l }) => {
+const RegisterClient = (props) => {
+    const { labels: l } = props;
+
     const [submitted, setSubmitted] = useState(false);
 
     if (submitted) {
@@ -137,6 +139,6 @@ const RegisterClient = ({ labels: l }) => {
             </div>
         </div>
     );
-}
+};
 
 export default RegisterClient;

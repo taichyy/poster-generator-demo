@@ -2,7 +2,9 @@
 
 import { useLocale } from 'next-intl';
 
-const I18nProvider = ({ children }) => {
+const I18nProvider = (props) => {
+    const { children } = props;
+
     const locale = useLocale();
 
     return (
@@ -10,6 +12,6 @@ const I18nProvider = ({ children }) => {
             {children}
         </html>
     );
-}
+};
 
 export default I18nProvider;

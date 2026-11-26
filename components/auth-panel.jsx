@@ -3,7 +3,9 @@ import Image from "next/image";
 
 // Reusable left brand panel for all auth pages
 
-const AuthBrandPanel = ({ locale, logoLabel, tagline }) => {
+const AuthBrandPanel = (props) => {
+    const { locale, logoLabel, tagline } = props;
+
     return (
         <div className="hidden lg:flex flex-col justify-between bg-zinc-950 px-12 py-12 relative overflow-hidden">
             {/* Ambient glow */}
@@ -25,15 +27,17 @@ const AuthBrandPanel = ({ locale, logoLabel, tagline }) => {
             </div>
         </div>
     );
-}
+};
 
-const AuthMobileLogo = ({ locale, logoLabel }) => {
+const AuthMobileLogo = (props) => {
+    const { locale, logoLabel } = props;
+
     return (
         <Link href={`/${locale}`} className="flex items-center gap-2.5 mb-10 lg:hidden">
             <Image src="/logo.png" alt="一番賞海報生成器" width={120} height={36} className="h-9 w-auto object-contain" />
         </Link>
     );
-}
+};
 
 // Shared input style
 export const inputCls =

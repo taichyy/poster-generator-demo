@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
 import { ArrowLeft, ArrowRight, EnvelopeSimple } from "@phosphor-icons/react";
+
 import { AuthBrandPanel, AuthMobileLogo, inputCls } from "@/components/auth-panel";
 
-const ForgotPasswordClient = ({ labels: l }) => {
+const ForgotPasswordClient = (props) => {
+    const { labels: l } = props;
+
     const [sent, setSent] = useState(false);
     const [email, setEmail] = useState("");
 
@@ -97,6 +99,6 @@ const ForgotPasswordClient = ({ labels: l }) => {
             </div>
         </div>
     );
-}
+};
 
 export default ForgotPasswordClient;

@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
+import * as React from "react";
 import {
     flexRender,
     getCoreRowModel,
     getFilteredRowModel,
     getSortedRowModel,
     useReactTable,
-} from "@tanstack/react-table"
-import * as React from "react"
+} from "@tanstack/react-table";
 
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { PaginationButtons } from "@/components/pagination-buttons";
 import {
     Table,
     TableBody,
@@ -16,22 +19,21 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
     DropdownMenuContent,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { PaginationButtons } from "@/components/pagination-buttons"
+} from "@/components/ui/dropdown-menu";
 
-export const DataTable = ({ columns, data, page, total, labels }) => {
-    const [sorting, setSorting] = React.useState([])
-    const [columnFilters, setColumnFilters] = React.useState([])
-    const [columnVisibility, setColumnVisibility] = React.useState({})
-    const [rowSelection, setRowSelection] = React.useState({})
+export const DataTable = (props) => {
+    const { columns, data, page, total, labels } = props;
+
+    const [sorting, setSorting] = React.useState([]);
+    const [columnFilters, setColumnFilters] = React.useState([]);
+    const [columnVisibility, setColumnVisibility] = React.useState({});
+    const [rowSelection, setRowSelection] = React.useState({});
 
     // The poster name column id is translated — find it dynamically
     const posterNameColId = labels?.colName ?? "海報名稱";
@@ -47,7 +49,7 @@ export const DataTable = ({ columns, data, page, total, labels }) => {
         onColumnVisibilityChange: setColumnVisibility,
         onRowSelectionChange: setRowSelection,
         state: { sorting, columnFilters, columnVisibility, rowSelection },
-    })
+    });
 
     return (
         <div>
@@ -129,5 +131,5 @@ export const DataTable = ({ columns, data, page, total, labels }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

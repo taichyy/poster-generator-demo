@@ -3,7 +3,9 @@ import { getTranslations } from "next-intl/server";
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 
-const SettingsLayout = async ({ children }) => {
+const SettingsLayout = async (props) => {
+    const { children } = props;
+
     const t = await getTranslations('sidebar');
 
     return (

@@ -21,6 +21,6 @@ const ForgotPasswordPage = async () => {
     };
 
     return <ForgotPasswordClient labels={labels} />;
-}
+};
 
 export default ForgotPasswordPage;

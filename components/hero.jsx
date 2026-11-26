@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, getLocale } from 'next-intl/server';
 

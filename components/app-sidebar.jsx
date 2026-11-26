@@ -106,4 +106,4 @@ export const AppSidebar = async () => {
             </SidebarFooter>
         </Sidebar>
     );
-}
+};

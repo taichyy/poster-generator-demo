@@ -1,8 +1,12 @@
-"use client"
+"use client";
 
 import { useState, useRef } from "react";
 import { Hand, ArrowBigRight, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
 
+import { Input } from "./ui/input";
+import { Separator } from "./ui/separator";
+import { useI18n } from "@/hooks/use-i18n";
+import ObjAdjusterInput from "./ui/obj-adjuster-input";
 import {
     Sheet,
     SheetContent,
@@ -10,21 +14,22 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "@/components/ui/sheet"
-import { Input } from "./ui/input";
-import { Separator } from "./ui/separator";
-import ObjAdjusterInput from "./ui/obj-adjuster-input";
-import { useI18n } from "@/hooks/use-i18n";
+} from "@/components/ui/sheet";
 
 // ScrollArea shimmed with a plain div
-const ScrollArea = ({ className, children }) => (
-    <div className={`overflow-y-auto ${className ?? ""}`}>{children}</div>
-);
+const ScrollArea = (props) => {
+    const { className, children } = props;
 
-const ObjAdjuster = ({
-    artboard, data, artboardItems, setArtboardItems,
-    height, setHeight, width, setWidth
-}) => {
+    return (
+        <div className={`overflow-y-auto ${className ?? ""}`}>{children}</div>
+    );
+};
+
+const ObjAdjuster = (props) => {
+    const {
+        artboard, data, artboardItems, setArtboardItems,
+        height, setHeight, width, setWidth
+    } = props;
 
     const [isOpen, setIsOpen] = useState(false);
     const scrollAreaRef = useRef(null);
@@ -56,7 +61,7 @@ const ObjAdjuster = ({
                 itemRefsMap.current[id].scrollIntoView({ behavior: "smooth", block: "center" });
             }
         }, 0);
-    }
+    };
 
     const handleChange = (id, key, value) => {
 
@@ -75,8 +80,8 @@ const ObjAdjuster = ({
                 }
             } else if (key == "styleTextAlign") {
                 if (item.id === id) {
-                    item.style.textAlign = value
-                    return item
+                    item.style.textAlign = value;
+                    return item;
                 } else {
                     return item;
                 }
@@ -91,7 +96,7 @@ const ObjAdjuster = ({
             [artboard]: updatedArtboardItems,
         }));
 
-    }
+    };
 
     return (
         <Sheet className="bg-transparent" open={isOpen} onOpenChange={setIsOpen}>
@@ -296,6 +301,6 @@ const ObjAdjuster = ({
             </SheetContent>
         </Sheet>
     );
-}
+};
 
 export default ObjAdjuster;
