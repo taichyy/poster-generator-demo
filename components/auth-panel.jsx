@@ -27,7 +27,7 @@ const AuthBrandPanel = (props) => {
             </div>
         </div>
     );
-};
+}
 
 const AuthMobileLogo = (props) => {
     const { locale, logoLabel } = props;
@@ -37,7 +37,7 @@ const AuthMobileLogo = (props) => {
             <Image src="/logo.png" alt="一番賞海報生成器" width={120} height={36} className="h-9 w-auto object-contain" />
         </Link>
     );
-};
+}
 
 // Shared input style
 export const inputCls =

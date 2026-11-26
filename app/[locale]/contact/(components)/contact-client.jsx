@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Headset, EnvelopeSimple, ChatCircle, BookOpen, ArrowRight, CheckCircle } from "@phosphor-icons/react";
@@ -155,6 +155,6 @@ const ContactClient = (props) => {
             </div>
         </main>
     );
-};
+}
 
 export default ContactClient;

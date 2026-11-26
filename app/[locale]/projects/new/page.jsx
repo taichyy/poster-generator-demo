@@ -13,6 +13,6 @@ const NewProjectPage = async () => {
     };
 
     return <NewProjectClient labels={labels} />;
-};
+}
 
 export default NewProjectPage;

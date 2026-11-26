@@ -44,6 +44,6 @@ const BillingPage = async () => {
     };
 
     return <BillingClient labels={labels} />;
-};
+}
 
 export default BillingPage;

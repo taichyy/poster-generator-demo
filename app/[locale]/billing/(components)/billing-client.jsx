@@ -167,6 +167,6 @@ const BillingClient = (props) => {
             </div>
         </main>
     );
-};
+}
 
 export default BillingClient;

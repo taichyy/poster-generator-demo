@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { User, Camera, FloppyDisk, Key } from "@phosphor-icons/react";
@@ -150,6 +150,6 @@ const AccountClient = (props) => {
             </div>
         </main>
     );
-};
+}
 
 export default AccountClient;

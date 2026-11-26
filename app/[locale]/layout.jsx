@@ -65,6 +65,6 @@ const LocaleLayout = async (props) => {
             </body>
         </html>
     );
-};
+}
 
 export default LocaleLayout;

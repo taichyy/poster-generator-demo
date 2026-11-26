@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
@@ -47,6 +47,6 @@ const LanguageSwitcher = () => {
             </button>
         </div>
     );
-};
+}
 
 export default LanguageSwitcher;

@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -79,6 +79,6 @@ const ProjectEditClient = (props) => {
             <ImgPicker open={open} setOpen={setOpen} bgc={bgc} setBgc={setBgc} />
         </div>
     );
-};
+}
 
 export default ProjectEditClient;

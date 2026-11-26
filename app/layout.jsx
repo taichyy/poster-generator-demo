@@ -10,7 +10,7 @@ const RootLayout = (props) => {
             <Analytics />
             {children}
         </> 
-    );
-};
+    )
+}
 
 export default RootLayout;

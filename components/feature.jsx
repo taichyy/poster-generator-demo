@@ -3,7 +3,7 @@ import { FaBook, FaCog, FaDesktop, FaHeadset, FaInfinity, FaLaptop, FaLayerGroup
 const Feature = () => {
     const featureData = {
         feature_title: "Its Everything you will ever need",
-    };
+    }
     const features = [
         {
             icon: <FaLayerGroup className="text-red-500" />,
@@ -41,7 +41,7 @@ const Feature = () => {
             icon: <FaShieldAlt className="text-orange-500" />,
             text: "Enhanced Security",
         },
-    ];
+    ]
     
     return (
         <div className="bg-pink-50 pt-20 pb-20">
@@ -69,7 +69,7 @@ const Feature = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Feature;

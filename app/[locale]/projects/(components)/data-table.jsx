@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
     flexRender,
@@ -30,10 +30,10 @@ import { PaginationButtons } from "@/components/pagination-buttons";
 export const DataTable = (props) => {
     const { columns, data, page, total, labels } = props;
 
-    const [sorting, setSorting] = React.useState([]);
-    const [columnFilters, setColumnFilters] = React.useState([]);
-    const [columnVisibility, setColumnVisibility] = React.useState({});
-    const [rowSelection, setRowSelection] = React.useState({});
+    const [sorting, setSorting] = React.useState([])
+    const [columnFilters, setColumnFilters] = React.useState([])
+    const [columnVisibility, setColumnVisibility] = React.useState({})
+    const [rowSelection, setRowSelection] = React.useState({})
 
     // The poster name column id is translated — find it dynamically
     const posterNameColId = labels?.colName ?? "海報名稱";
@@ -49,7 +49,7 @@ export const DataTable = (props) => {
         onColumnVisibilityChange: setColumnVisibility,
         onRowSelectionChange: setRowSelection,
         state: { sorting, columnFilters, columnVisibility, rowSelection },
-    });
+    })
 
     return (
         <div>
@@ -131,5 +131,5 @@ export const DataTable = (props) => {
                 </div>
             </div>
         </div>
-    );
+    )
 };

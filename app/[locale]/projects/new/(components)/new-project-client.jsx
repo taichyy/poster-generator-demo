@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { Circle } from "fabric";
 import { useEffect, useState } from "react";
@@ -92,6 +92,6 @@ const NewProjectClient = (props) => {
             </div>
         </main>
     );
-};
+}
 
 export default NewProjectClient;

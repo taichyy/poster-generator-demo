@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useLocale } from "next-intl";
 
@@ -12,6 +12,6 @@ const I18nProvider = (props) => {
             {children}
         </html>
     );
-};
+}
 
 export default I18nProvider;

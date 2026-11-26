@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Ellipsis } from "lucide-react";
@@ -33,7 +33,7 @@ export const PaginationButtons = (props) => {
     } = props;
 
     const router = useRouter();
-    const pathname = usePathname();
+    const pathname = usePathname()
     const t = useI18n();
 
     // Current page, can be from anywhere.
@@ -50,7 +50,7 @@ export const PaginationButtons = (props) => {
             // Construct the full URL
             const fullPath = `${pathname}?${urlParams.toString()}`;
 
-            router.refresh();
+            router.refresh()
             navigate(fullPath);
         }
     };
@@ -122,8 +122,8 @@ export const PaginationButtons = (props) => {
                     </div>
                 )}
             </>
-        );
-    };
+        )
+    }
 
     return (
         <>

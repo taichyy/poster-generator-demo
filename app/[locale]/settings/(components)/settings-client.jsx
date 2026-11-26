@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Gear, Bell, Shield, Palette, Globe, FloppyDisk } from "@phosphor-icons/react";
@@ -194,6 +194,6 @@ const SettingsClient = (props) => {
             </div>
         </main>
     );
-};
+}
 
 export default SettingsClient;

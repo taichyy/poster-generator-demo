@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import { useMemo } from "react";
@@ -78,7 +78,7 @@ const buildColumns = (labels, locale) => {
             },
         },
     ];
-};
+}
 
 const ProjectsTableClient = (props) => {
     const { data, page, locale, labels } = props;
@@ -94,6 +94,6 @@ const ProjectsTableClient = (props) => {
             labels={labels}
         />
     );
-};
+}
 
 export default ProjectsTableClient;

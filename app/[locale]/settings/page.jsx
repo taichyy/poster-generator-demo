@@ -80,6 +80,6 @@ const SettingsPage = async () => {
     };
 
     return <SettingsClient labels={labels} />;
-};
+}
 
 export default SettingsPage;

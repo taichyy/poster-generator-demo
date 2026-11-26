@@ -18,7 +18,7 @@ const WhyChooseCard = (props) => {
                 {linkText} &#8594;
             </p> */}
         </div>
-    );
-};
+    )
+}
 
 export default WhyChooseCard;

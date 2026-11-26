@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
@@ -28,30 +28,30 @@ const SampleAdder = (props) => {
     const { artboard, data, artboardItems, setArtboardItems } = props;
 
     // Prizes to add
-    let prizes = [];
+    let prizes = []
     for(let prize of data.prizes){
         if(!prize.name){
-            prizes.push(prize.class);
+            prizes.push(prize.class)
         }
     }
     
     // CDEF, which prize chose
-    const [select, setSelect] = useState(prizes[0]);
-    const [imgSelect, setImgSelect] = useState("");
-    const [fullView, setFullView] = useState(false);
+    const [select, setSelect] = useState(prizes[0])
+    const [imgSelect, setImgSelect] = useState("")
+    const [fullView, setFullView] = useState(false)
     
-    const sampleImagesRoute = "/posterAssets/images/samples/";
+    const sampleImagesRoute = "/posterAssets/images/samples/"
     const sampleImages = [
         "blindBoxes.png",
         "fourPeople.png",
         "sixPeople.png",
         "TowelsPlatesCups.png",
         "PlatesFoldersPaper.png"
-    ];
+    ]
     
     const addItem = (top=0, left=0) => {
         // Get obj data from prop hooks 
-        let items = [...artboardItems];
+        let items = [...artboardItems]
         items[artboard].push(...addAttributes([
             // Main image
             {
@@ -129,10 +129,10 @@ const SampleAdder = (props) => {
                 font : `HiraKakuStd-W8`,
                 content : `${data.prizes.find(item => item.class == select).desc}`, 
             }
-        ]));
+        ]))
         // Update via useState function
-        setArtboardItems(items);
-    };
+        setArtboardItems(items)
+    }
     
     return (
         <AlertDialog>
@@ -231,6 +231,6 @@ const SampleAdder = (props) => {
             </AlertDialogContent>
         </AlertDialog>
     );
-};
+}
  
 export default SampleAdder;

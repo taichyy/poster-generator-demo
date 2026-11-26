@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import * as fabric from "fabric";
 import { Square } from "lucide-react";
@@ -15,7 +15,7 @@ const FabricCanvas = (props) => {
             const initCanvas = new fabric.Canvas(canvasRef.current, {
                 width: 500,
                 height: 500,
-            });
+            })
 
             initCanvas.backgroundColor = "#ccc";
             initCanvas.renderAll();
@@ -24,9 +24,9 @@ const FabricCanvas = (props) => {
 
             return () => {
                 initCanvas.dispose();
-            };
+            }
         }
-    }, []);
+    }, [])
     
     const addRectangle = () => {
         if (canvas) {
@@ -40,7 +40,7 @@ const FabricCanvas = (props) => {
             
             canvas.add(rect);
         }
-    };
+    }
 
     return (
         <div>

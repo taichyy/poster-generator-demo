@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Link from "next/link";
 import { useState } from "react";
@@ -139,6 +139,6 @@ const RegisterClient = (props) => {
             </div>
         </div>
     );
-};
+}
 
 export default RegisterClient;

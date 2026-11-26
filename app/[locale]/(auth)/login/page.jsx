@@ -93,6 +93,6 @@ const LoginPage = async () => {
             </div>
         </div>
     );
-};
+}
 
 export default LoginPage;

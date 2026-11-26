@@ -30,6 +30,6 @@ const RegisterPage = async () => {
     };
 
     return <RegisterClient labels={labels} />;
-};
+}
 
 export default RegisterPage;

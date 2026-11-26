@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState, useRef } from "react";
 import { Hand, ArrowBigRight, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
@@ -61,7 +61,7 @@ const ObjAdjuster = (props) => {
                 itemRefsMap.current[id].scrollIntoView({ behavior: "smooth", block: "center" });
             }
         }, 0);
-    };
+    }
 
     const handleChange = (id, key, value) => {
 
@@ -80,8 +80,8 @@ const ObjAdjuster = (props) => {
                 }
             } else if (key == "styleTextAlign") {
                 if (item.id === id) {
-                    item.style.textAlign = value;
-                    return item;
+                    item.style.textAlign = value
+                    return item
                 } else {
                     return item;
                 }
@@ -96,7 +96,7 @@ const ObjAdjuster = (props) => {
             [artboard]: updatedArtboardItems,
         }));
 
-    };
+    }
 
     return (
         <Sheet className="bg-transparent" open={isOpen} onOpenChange={setIsOpen}>
@@ -301,6 +301,6 @@ const ObjAdjuster = (props) => {
             </SheetContent>
         </Sheet>
     );
-};
+}
 
 export default ObjAdjuster;
