@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from "next-intl/server";
 
 const Footer = async () => {
     const t = await getTranslations('footer');

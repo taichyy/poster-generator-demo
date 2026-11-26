@@ -3,18 +3,18 @@
 import { useState, useRef } from "react";
 import { Hand, ArrowBigRight, AlignLeft, AlignRight, ImageIcon, ALargeSmall, Shapes } from "lucide-react";
 
+import {
+    Sheet,
+    SheetTitle,
+    SheetHeader,
+    SheetContent,
+    SheetTrigger,
+    SheetDescription,
+} from "@/components/ui/sheet";
 import { Input } from "./ui/input";
 import { Separator } from "./ui/separator";
 import { useI18n } from "@/hooks/use-i18n";
 import ObjAdjusterInput from "./ui/obj-adjuster-input";
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet";
 
 // ScrollArea shimmed with a plain div
 const ScrollArea = (props) => {

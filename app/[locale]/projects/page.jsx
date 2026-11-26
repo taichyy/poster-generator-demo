@@ -3,18 +3,18 @@ import { getLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
 import { Plus } from "@phosphor-icons/react/dist/ssr";
 
+import {
+    Dialog,
+    DialogTitle,
+    DialogFooter,
+    DialogHeader,
+    DialogContent,
+    DialogTrigger,
+    DialogDescription,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import ProjectsTableClient from "./(components)/projects-table-client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
 
 const ProjectsPage = async (props) => {
     const waitSearch = await props.searchParams;

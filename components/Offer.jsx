@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations, getLocale } from "next-intl/server";
 
-import RevealStagger from './reveal-stagger';
+import RevealStagger from "./reveal-stagger";
 
 const Offer = async () => {
     const t = await getTranslations('offer');

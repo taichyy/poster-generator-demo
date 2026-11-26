@@ -1,8 +1,8 @@
 "use client";
 
-import AOS from 'aos';
+import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 const AOSProvider = (props) => {
     const { children } = props;

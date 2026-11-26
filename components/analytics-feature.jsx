@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { getLocale } from 'next-intl/server';
-import { getTranslations } from 'next-intl/server';
+import Link from "next/link";
+import { getLocale } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Check } from "@phosphor-icons/react/dist/ssr";
 
-import RevealStagger from './reveal-stagger';
+import RevealStagger from "./reveal-stagger";
 
 const AnalyticsFeature = async () => {
     const t = await getTranslations('analyticsFeature');

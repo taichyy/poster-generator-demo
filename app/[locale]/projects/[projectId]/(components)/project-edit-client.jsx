@@ -4,16 +4,16 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowLeftCircle, Pencil } from "lucide-react";
 
+import {
+    ResizablePanel,
+    ResizableHandle,
+    ResizablePanelGroup,
+} from "@/components/ui/resizable";
 import { detailData } from "@/lib/data";
 import Artboard from "@/components/ui/artboard";
 import FlexCard from "@/components/ui/flex-card";
 import ImgPicker from "@/components/ui/img-picker";
 import BasicTextBox from "@/components/ui/basic-text-box";
-import {
-    ResizableHandle,
-    ResizablePanel,
-    ResizablePanelGroup,
-} from "@/components/ui/resizable";
 
 const ProjectEditClient = (props) => {
     const { labels, locale } = props;

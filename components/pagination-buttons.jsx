@@ -1,20 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { Ellipsis } from 'lucide-react';
+import { Ellipsis } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
-import { cn } from "@/lib/utils";
-import { navigate } from "@/lib/actions";
-import { useI18n } from "@/hooks/use-i18n";
 import {
     Pagination,
     PaginationItem,
     PaginationLink,
     PaginationNext,
     PaginationContent,
-    PaginationPrevious
+    PaginationPrevious,
 } from "./ui/pagination";
+import { cn } from "@/lib/utils";
+import { navigate } from "@/lib/actions";
+import { useI18n } from "@/hooks/use-i18n";
 
 export const PaginationButtons = (props) => {
     const {

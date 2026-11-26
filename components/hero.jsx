@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import { getTranslations, getLocale } from 'next-intl/server';
+import { getTranslations, getLocale } from "next-intl/server";
 
-import HeroMotion from './hero-motion';
+import HeroMotion from "./hero-motion";
 
 const Hero = async () => {
     const t = await getTranslations('hero');

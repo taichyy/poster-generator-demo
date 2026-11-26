@@ -4,13 +4,13 @@ import { Circle } from "fabric";
 import { useEffect, useState } from "react";
 import { Export } from "@phosphor-icons/react";
 
-import FabricCanvas from "@/components/fabric-canvas";
 import {
     Accordion,
-    AccordionContent,
     AccordionItem,
+    AccordionContent,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import FabricCanvas from "@/components/fabric-canvas";
 
 const NewProjectClient = (props) => {
     const { labels } = props;

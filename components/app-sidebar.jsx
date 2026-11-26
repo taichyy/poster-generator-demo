@@ -4,20 +4,20 @@ import { CaretUp, Headset, House, Tray, Gear, User } from "@phosphor-icons/react
 
 import {
     DropdownMenu,
-    DropdownMenuContent,
     DropdownMenuItem,
+    DropdownMenuContent,
     DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import {
     Sidebar,
-    SidebarContent,
-    SidebarGroup,
-    SidebarGroupContent,
-    SidebarGroupLabel,
     SidebarMenu,
-    SidebarMenuButton,
-    SidebarMenuItem,
+    SidebarGroup,
     SidebarFooter,
+    SidebarContent,
+    SidebarMenuItem,
+    SidebarGroupLabel,
+    SidebarMenuButton,
+    SidebarGroupContent,
 } from "@/components/ui/sidebar";
 
 export const AppSidebar = async () => {

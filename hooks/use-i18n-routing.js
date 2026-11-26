@@ -1,4 +1,4 @@
-import { useLocale } from 'next-intl';
+import { useLocale } from "next-intl";
 
 export const useI18nRouting = () => {
     const locale = useLocale();

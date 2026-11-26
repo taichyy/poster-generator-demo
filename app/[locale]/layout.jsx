@@ -1,11 +1,11 @@
-import { Toaster } from 'react-hot-toast';
-import { getMessages } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
+import { Toaster } from "react-hot-toast";
+import { getMessages } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "../globals.css";
 import { locales } from "@/i18n/config";
-import { TooltipProvider } from '@/components/ui/tooltip';
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geist = Geist({
     subsets: ["latin"],

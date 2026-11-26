@@ -6,16 +6,16 @@ import toast from "react-hot-toast";
 import { formatDate } from "date-fns";
 import { MoreHorizontal } from "lucide-react";
 
-import { DataTable } from "./data-table";
-import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
-    DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuSeparator,
+    DropdownMenuContent,
     DropdownMenuTrigger,
+    DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
+import { DataTable } from "./data-table";
+import { Button } from "@/components/ui/button";
 
 // Columns are built inside the component so they can access translated labels via closure
 const buildColumns = (labels, locale) => {

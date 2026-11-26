@@ -3,26 +3,26 @@
 import { useState } from "react";
 import { Check, PlusCircle, X, XCircle, ZoomIn } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
-import { addAttributes } from "@/lib/functions";
 import {
     Carousel,
-    CarouselContent,
     CarouselItem,
     CarouselNext,
+    CarouselContent,
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import {
     AlertDialog,
+    AlertDialogTitle,
     AlertDialogAction,
     AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
     AlertDialogFooter,
     AlertDialogHeader,
-    AlertDialogTitle,
+    AlertDialogContent,
     AlertDialogTrigger,
+    AlertDialogDescription,
 } from "@/components/ui/alert-dialog";
+import { Badge } from "@/components/ui/badge";
+import { addAttributes } from "@/lib/functions";
 
 const SampleAdder = (props) => {
     const { artboard, data, artboardItems, setArtboardItems } = props;
